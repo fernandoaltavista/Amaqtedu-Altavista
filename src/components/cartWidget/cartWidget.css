@@ -1,0 +1,12 @@
+.cartWidget{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.numberCountCart{
+    margin-left: 5px;
+    color: red;
+    font-weight: bold;
+}

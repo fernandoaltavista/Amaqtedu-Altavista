@@ -1,10 +1,9 @@
-.top-navbar{
+.navbar{
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items: center;
-    padding: 0.4rem;
     box-shadow: -2px 15px 105px -10px rgba(0, 0, 0, 0.329);
 }
 .logo{
@@ -20,19 +19,25 @@ ul {
     padding: 0;
 }
 
-li  {
+.itemNav  {
     
     display: inline-flex;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-a{
+.itemNav a{
     text-decoration: none;
     color: black;
 }
-a:hover{
+.itemNav a:hover{
     color: orange;
     text-decoration: underline;
     transition: 0.5s;
+}
+
+.userImage{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
 }
