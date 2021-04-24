@@ -1,0 +1,16 @@
+.itemCount{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.numberCount{
+    background-color: rgba(187, 177, 177, 0.603);
+    border-radius: 15px;
+    font-weight: bold;
+    text-align: center;
+    width: 100px;
+}
+.buttonAdd{
+    display: block;
+}
