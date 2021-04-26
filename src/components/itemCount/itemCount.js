@@ -2,7 +2,7 @@ import {useState} from 'react'
 import './itemCount.css'
 
 export const ItemCount = ({stock,initial,onAdd}) =>  {
-    
+   
     const [count, setCount] = useState(initial)
     
     const increment = () =>  { if (count < stock) {
