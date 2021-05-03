@@ -19,21 +19,16 @@ export const ItemCount = ({stock,initial,onAdd}) =>  {
     }
 
     return (   
-
-        <div className="itemCount">
-            
-            <button className="btn-primary" onClick={increment}>+</button>
-            <span className="numberCount" >{count}</span>
-            <button className="btn-danger" onClick={decrement}>-</button>
-           <div className="buttonAdd">
-                <button className="btn-primary" onClick={(event) => {
-                onAdd(event,count)
-                setCount(1)}}>Agregar</button>
+        <div>
+            <div className="itemCount">
+                <button className="buttonCount" onClick={decrement}>-</button>
+                <span className="numberCount" >{count}</span>
+                <button className="buttonCount" onClick={increment}>+</button>
             </div>
-            
-        </div> 
-        
-
-        
+            <div className="buttonAddContainer">
+                <button className="buttonAdd" onClick={() => {onAdd(count)
+                    setCount(1)}}>AGREGAR AL CARRITO</button>
+            </div>
+        </div>
     )
 }

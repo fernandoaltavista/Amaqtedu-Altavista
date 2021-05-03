@@ -1,16 +1,50 @@
 .itemCount{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 50px;
     
 }
 .numberCount{
-    background-color: rgba(187, 177, 177, 0.603);
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+    background-color: rgba(187, 177, 177, 0.308);
     border-radius: 15px;
     font-weight: bold;
     text-align: center;
-    width: 100px;
+    width: 50%;
+    height: 40px;
+}
+.buttonAddContainer{
+    text-align: center;
+    margin-top: 30px;
 }
 .buttonAdd{
-    display: block;
+    padding: 10px;
+    width: 250px;
+    border-radius: 10px;
+    background-color: #F8CB00;
+    border-color: transparent;
+    color: white;
+    font-weight: bold;
+}
+.buttonAdd:hover{
+    background-color: #d3af0d;
+}
+.buttonCount{
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #FFB141;
+    border-color: transparent;
+    color: white;
+    width: 40px;
+    height: 40px;
+}
+.buttonCount:hover{
+    background-color: #cc8d34;
 }
