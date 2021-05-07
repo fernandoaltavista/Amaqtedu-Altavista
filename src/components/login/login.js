@@ -1,9 +1,9 @@
 import './login.css'
 
-export const Login = (props) => {
+export const Login = () => {
     return (
         <div className="login">
-            <img src={props.user.image} className="userImage"alt="User"></img>
+           <button className="buttonLoginIn">Login In</button>
         </div>
     )
 }
