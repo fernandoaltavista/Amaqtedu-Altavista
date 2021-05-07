@@ -1,11 +1,11 @@
 import './navbar.css'
-import logo from'./logo_peq.png'
-import {NavLink} from 'react-router-dom'
 import {CartWidget} from '../cartWidget/cartWidget'
 import {Login} from '../login/login'
+import {NavLink,Link} from 'react-router-dom'
+import logo from'./logo_peq.png'
 
 export const Navbar = ({user}) => {
-    const COUNT = 3
+
 return (
     <header>
         <nav className="navbar">
@@ -19,8 +19,8 @@ return (
                     
             </ul>
             <div className="loginContainer">
-                <CartWidget count={COUNT}/>
-                <Login user= {user}/>
+                <Link to='/cart'><CartWidget /></Link>
+                <Login/>
                 <span className="icon-toggler"></span>
 
             </div>

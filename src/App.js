@@ -1,9 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.css'
-import data from './components/products/products.json'
-import {Navbar} from './components/navbar/navbar'
-import {ItemListContainer} from './components/itemListContainer/itemListContainer'
-import {BrowserRouter,Switch,Route} from 'react-router-dom'
 import { ItemDetailContainer } from './components/itemDetailContainer/itemDetailContainer'
+import {BrowserRouter,Switch,Route} from 'react-router-dom'
+import {ItemListContainer} from './components/itemListContainer/itemListContainer'
+import {Navbar} from './components/navbar/navbar'
+import {Cart} from './components/cart/cart'
+import data from './components/products/products.json'
 
 function App() {
   const USER = {
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path='/item/:id'>
             <ItemDetailContainer data={data} />
+          </Route>
+          <Route path='/cart'>
+            <Cart/>
           </Route>
         </Switch>
       </BrowserRouter>
