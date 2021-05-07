@@ -1,11 +1,28 @@
 import './itemDetail.css'
 import {ItemCount} from '../itemCount/itemCount'
+import {useState,useEffect} from 'react'
+import { Link } from 'react-router-dom'
 
 export const ItemDetail = ({item}) => {
- const onAdd = (count) => {
-    alert(`Agrego al carrito ${count}`)
-   
+const [quantity, setQuantity] = useState(0)
+const [finishAdd,setFinishAdd] = useState(true)
+
+ const onAdd = (quantity) => {
+    console.log(quantity)
+    setQuantity(quantity)
  }
+ const removeButtonAdd = () => {
+        setQuantity(0)
+
+ }
+useEffect(() => {
+
+    if (quantity !== 0) {
+        setFinishAdd(false)
+    } 
+
+ }, [quantity])
+
     return(
     
         <div className="itemDetail">
@@ -18,7 +35,23 @@ export const ItemDetail = ({item}) => {
                         <h1 className="titleItemDetail">{item.title}</h1>
                         <h1 className="priceItemDetail">{item.price}</h1>
                         <p className="descriptionItemDetail">{item.description}</p>
-                        <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
+                        <div className="buttonAddContainer">
+                        { finishAdd  ? ( 
+                            <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
+                            ) 
+                            :( 
+                                <div>
+                                    <p className="quantity">
+                                        Cantidad Escogida: {quantity}
+                                    </p>
+                                    <Link to="/cart"><button onClick= {removeButtonAdd}
+                                    className="buttonFinish">
+                                        Terminar compra
+                                    </button></Link>
+                                </div>
+                            )
+                        }
+                        </div>
                     </div>
                 </div> 
             </div>

@@ -1,5 +1,5 @@
-import {useState} from 'react'
 import './itemCount.css'
+import {useState} from 'react'
 
 export const ItemCount = ({stock,initial,onAdd}) =>  {
    
@@ -27,7 +27,7 @@ export const ItemCount = ({stock,initial,onAdd}) =>  {
             </div>
             <div className="buttonAddContainer">
                 <button className="buttonAdd" onClick={() => {onAdd(count)
-                    setCount(1)}}>AGREGAR AL CARRITO</button>
+                }}>AGREGAR AL CARRITO</button>
             </div>
         </div>
     )

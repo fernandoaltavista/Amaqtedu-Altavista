@@ -39,3 +39,22 @@
     padding-bottom: 10px;
     text-align: left;
 }
+.quantity{
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.buttonAddContainer{
+    text-align: center;
+    margin-top: 40px;
+    
+}
+.buttonFinish{
+    padding: 8px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: orangered;
+    border-color: transparent;
+    color: white;
+    font-weight: bold;
+
+}
