@@ -1,8 +1,8 @@
 import './itemList.css'
 import {Item} from '../item/item'
-import {useState,useEffect} from 'react'
-import {useParams} from 'react-router'
 import {Loader} from '../loader/loader'
+import {useParams} from 'react-router'
+import {useState,useEffect} from 'react'
 
 
 export const ItemList = ({data}) => {
@@ -40,8 +40,8 @@ useEffect(() => {
    
         <div className="itemList">
             {
-            categoryId ? (<h4 className="textCategory">Categoria: {categoryId}</h4>)
-            : (<h2 className="gretting">Bienvenido a nuestra tienda</h2>)
+            categoryId ? (<h4 className="textCategory">Categoria: {categoryId.toUpperCase()}</h4>)
+            : (<h2 className="gretting">🖌 Bienvenido a nuestra tienda</h2>)
             }
             {
             (isLoading) ? (<Loader />)
