@@ -2,3 +2,64 @@
     text-align: center;
     padding: 30px;
 }
+.cartItem{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+    border-radius: 10px;
+    margin: 10px;
+    padding:10px;
+    background-color: rgba(128, 128, 128, 0.205);
+}
+.cartItemInfo{
+    width:50%;
+}
+.imgItemCart{
+    width:150px;
+    height: 150px;
+    background-size: cover;
+}
+.buttonRemoveAllContainer{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: flex-start;
+	align-content: stretch;
+
+}
+.cartEmptyContainer{
+    padding: 10px;
+    text-align: center;
+    
+}
+
+.buttonRemoveAll{
+    margin-right: 10px;
+    padding: 5px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: white;
+    border: solid 1px;
+    border-color: rgba(160, 15, 15, 0.884);
+    color: rgba(160, 15, 15, 0.884);
+}
+.buttonRemoveItem{
+    text-align: center;
+    padding: 4px;
+    width: 30px;
+    font-size: 1rem;
+    border-radius: 50%;
+    background-color: rgba(160, 15, 15, 0.884);
+    border-color: transparent;
+    color: white;
+    font-weight: bold;
+}
+.buttonRemoveAll:hover,.buttonRemoveItem:hover{
+    transition: .5s;
+    color: white;
+    background-color: rgba(160, 15, 15, 0.884);
+}
