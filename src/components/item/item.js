@@ -10,7 +10,7 @@ export const Item = ({item})=> {
                 <Link to={`/item/${item.id}`}> 
                     <img className="pictureItem" src={item.pictureUrl} alt={item.title}/>
                     <h3 className="titleItem">{item.title}</h3>
-                    <strong className="priceItem">{item.price}</strong>
+                    <strong className="priceItem">€{item.price}</strong>
                 </Link>
             </div>
         
