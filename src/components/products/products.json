@@ -3,7 +3,7 @@
         "title":"BODEGÓN AL CIELO",
         "categoryId":"lienzos",
         "description":"Henry Amaro: “Pese a ser un bodegón al aire libre contiene sombras resaltadas para una imagen con contenidos hacia el tiempo”.",
-        "price":"€65",
+        "price":65,
         "stock": 10,
         "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2021/03/bodegon-al-cielo.jpg"
         },
@@ -12,7 +12,7 @@
         "title":"CAMINO",
         "categoryId":"lienzos",
         "description":"Cristian Daniel Rodríguez: “Todos nacemos iguales… El nacimiento es la partida, la vida es el camino por recorrer, la meta es el fin del camino desde donde podemos ver lo que hemos realizado. ¿Qué vale más, la meta o recorrer el camino?",
-        "price":"€65",
+        "price":65,
         "stock": 8,
         "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2021/02/camino.jpg"
         },
@@ -21,7 +21,7 @@
         "title":"BONITO CUADRO",
         "categoryId":"lienzos",
         "description":"“El cuadro me representa a recordar una ciudad ordenada como es Perú o como es España. También me inspiré más en el orden y lo bonito que sería así toda ciudad, una capital ordenada. Así daría gusto vivir. Bonito cuadro.”",
-        "price":"€65",
+        "price":65,
         "stock": 18,
         "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2021/01/bonito-cuadro.jpg"
         },
@@ -30,44 +30,44 @@
         "title":"CORAZÓN",
         "categoryId":"lienzos",
         "description":"Jackeline Bendezú Rojas: “Es una enfermedad congénita sobre la miocardiopatía, cuando un músculo del corazón es más grande de lo normal, algo que yo tengo y el riesgo más peligroso es la muerte súbita”",
-        "price":"€65",
+        "price":65,
         "stock": 11,
         "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2021/02/corazon.jpg"
         },
         {
         "id":"5",
-        "title":"CAMISETA ARTE QUE DA VIDA",
-        "categoryId":"remeras",
-        "description":"Aqui va una descripcion",
-        "price":"€12",
-        "stock": 8,
-        "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2020/12/amaqteud-camiseta3-min.jpg"
+        "title":"ARCO IRIS",
+        "categoryId":"lienzos",
+        "description":" Su sencillez y su dulzura, transportan al Cielo. El artista no deja un testimonio escrito, pero nos deja sus colores para poder imaginar su corazón.",
+        "price":30,
+        "stock": 11,
+        "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2021/04/arco-iris.jpg"
         },
         {
         "id":"6",
-        "title":"CAMISETA AMAQTEDU",
-        "categoryId":"remeras",
-        "description":"Aqui va una descripcion",
-        "price":"€12",
-        "stock": 8,
-        "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2020/12/amaqtedu-camiseta-min-600x800.jpeg"
+        "title":"LA VIDA",
+        "categoryId":"lienzos",
+        "description":"con una flor somos capaces de resumirlo todo: un te amo, un para toda la vida… Porque cuando una flor se marchita, siempre queda el perfume de sus tiernos pétalos, esos que pellizcamos con las manos con la intención de que se nos pegue el aroma. Que esta obra no te deje indiferente; tú eres esa flor, ese te amo, que vive para darse hasta el final. La fragancia de tus buenas obras siempre perdurará. Y es que este olor se pega y no se qué tiene que transforma vidas. Te invito a que cojas una flor y le escribas a alguien lo importante que es para ti",
+        "price":30,
+        "stock": 11,
+        "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2021/04/la-vida.jpg"
         },
-    {
+        {
         "id":"7",
-        "title":"Remera 3",
-        "categoryId":"remeras",
-        "description":"Aqui va una descripcion",
-        "price":"$100",
-        "stock": 8,
-        "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2020/11/anonimo.jpg"
+        "title":"CORAZÓN",
+        "categoryId":"lienzos",
+        "description":"Jackeline Bendezú Rojas: “Es una enfermedad congénita sobre la miocardiopatía, cuando un músculo del corazón es más grande de lo normal, algo que yo tengo y el riesgo más peligroso es la muerte súbita”",
+        "price":65,
+        "stock": 11,
+        "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2021/02/corazon.jpg"
         },
         {
         "id":"8",
-        "title":"Remera 4",
+        "title":"CAMISETA ARTE QUE DA VIDA",
         "categoryId":"remeras",
         "description":"Aqui va una descripcion",
-        "price":"$100",
+        "price":"12",
         "stock": 8,
-        "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2020/11/anonimo.jpg"
+        "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2020/12/amaqteud-camiseta3-min.jpg"
         }
 ]
