@@ -48,9 +48,6 @@ useEffect(() => {
                             ) 
                             :( 
                                 <div>
-                                    <p className="quantity">
-                                        Cantidad Escogida: {quantity}
-                                    </p>
                                     <Link to="/cart"><button onClick={()=>toPay(quantity)}
                                     className="buttonFinish">
                                         Terminar compra
