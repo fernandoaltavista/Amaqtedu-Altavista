@@ -54,12 +54,12 @@
         },
         {
         "id":"7",
-        "title":"CORAZÓN",
+        "title":"LA FLOR DE MI VIDA",
         "categoryId":"lienzos",
-        "description":"Jackeline Bendezú Rojas: “Es una enfermedad congénita sobre la miocardiopatía, cuando un músculo del corazón es más grande de lo normal, algo que yo tengo y el riesgo más peligroso es la muerte súbita”",
-        "price":65,
-        "stock": 11,
-        "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2021/02/corazon.jpg"
+        "description":"'Kristian Aliyer: “Para mi mejor amiga; venimos del mismo país, Kazajistán, y estamos en el mismo país, España. Ella siempre me ha ayudado mucho; es como mi flor”",
+        "price":30,
+        "stock": 16,
+        "pictureUrl":"https://amaqtedu.es/wp-content/uploads/2021/04/la-flor-de-mi-vida.jpg"
         },
         {
         "id":"8",
