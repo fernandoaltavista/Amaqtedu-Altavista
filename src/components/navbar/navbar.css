@@ -52,7 +52,7 @@
         display:none;
     }
     .icon-toggler{
-        background-image: url(./icon-menu.png);
+        background-image: url(../../assets/images/svg/icon-menu.png);
         background-repeat: no-repeat;
         background-size: cover;
         height: 24px;

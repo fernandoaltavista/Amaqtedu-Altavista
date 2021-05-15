@@ -1,8 +1,8 @@
 import './navbar.css'
 import {CartWidget} from '../cartWidget/cartWidget'
 import {Login} from '../login/login'
-import {NavLink,Link} from 'react-router-dom'
-import logo from'./logo_peq.png'
+import {NavLink} from 'react-router-dom'
+import logo from'../../assets/images/svg/logo_peq.png'
 
 export const Navbar = ({user}) => {
 
@@ -19,7 +19,7 @@ return (
                     
             </ul>
             <div className="loginContainer">
-                <Link to='/cart'><CartWidget /></Link>
+                <NavLink to='/cart' className="itemNav"><CartWidget /></NavLink>
                 <Login/>
                 <span className="icon-toggler"></span>
 
