@@ -7,10 +7,13 @@
 	align-content: stretch;
     
 }
+.cartImage{
+    width:25px;
+    height:25px;
 
+}
 .numberCountCart{
     margin-left: 3px;
-    color: #d68b21;;
+    color: #d68b21;
     font-weight: bold;
-
 }

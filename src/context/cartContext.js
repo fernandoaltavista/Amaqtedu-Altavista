@@ -8,6 +8,9 @@ export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
     const [quantity, setQuantity] = useState(0)
 
+    const addElements = (array) => {
+       return array.reduce((a,b)=> a + b,0 )
+    }
     const isInCart = (id) => {
         const findItem = cart.findIndex(({item}) => item.id === id )
         return findItem
@@ -32,14 +35,21 @@ export const CartProvider = ({children}) => {
     const clear = ()=>{
         setCart([])
     }
-
+    const totalCart = ()=>{
+        const newCartSubTotal = cart.map(({item,quantity}) => item.price * quantity)
+        return addElements(newCartSubTotal)
+    }
+    const itemsTotal = () => {
+        const newCartQtyItem = cart.map(({item,quantity})=> quantity)
+        return addElements(newCartQtyItem)
+    }
     useEffect(() => {
-        setQuantity(cart.length)
+        setQuantity(itemsTotal())
         
     }, [cart])
 
     return (
-        <CartContext.Provider value={{cart,addItem,removeItem,clear,quantity}} > 
+        <CartContext.Provider value={{cart,addItem,removeItem,clear,totalCart,quantity}} > 
             {children}
         </CartContext.Provider>
     )
