@@ -45,8 +45,12 @@ useEffect(() => {
             }
             {
             (isLoading) ? (<Loader />)
-                : <div className="row"> {
-                    items && items.map(item => 
+                : <div className="row"> 
+                
+                { items < 1 ?
+                    <p>Disulpa no tengo eso que buscas</p>
+                    :
+                    items.map(item => 
                     <Item key={item.id} item={item} />)} 
                 </div>
             }   
