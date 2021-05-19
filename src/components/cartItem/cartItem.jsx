@@ -15,14 +15,14 @@ export const CartItem = ({item,quantity}) =>{
                         src={item.pictureUrl} alt={item.title}></img>
                     </div>
                     <div className="cartItemInfo">
-                        <h4 >{item.title}</h4>
-                        <h5 >€{item.price}</h5>
+                        <h4 >{(item.title).toUpperCase()}</h4>
+                        <h5>Precio:€{item.price}</h5>
                         <p>Cantidad:{quantity}</p>
                         <p>SubTotal: €{totalCartItem(item.price,quantity)}</p>
                     </div>
                     <div>
                         <button className="buttonRemoveItem" 
-                        onClick={()=>removeItem(item.id)}></button>
+                        onClick={()=>removeItem(item.id,quantity)}></button>
                     </div>
                 </div>
     )

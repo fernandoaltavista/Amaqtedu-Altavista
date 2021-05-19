@@ -9,7 +9,7 @@ export const Item = ({item})=> {
             <div className="item col-12 col-md-6 col-lg-3">
                 <Link to={`/item/${item.id}`}> 
                     <img className="pictureItem" src={item.pictureUrl} alt={item.title}/>
-                    <h3 className="titleItem">{item.title}</h3>
+                    <h3 className="titleItem">{(item.title).toUpperCase()}</h3>
                     <strong className="priceItem">€{item.price}</strong>
                 </Link>
             </div>

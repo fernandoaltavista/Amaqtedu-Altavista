@@ -6,12 +6,9 @@ import {CartContext} from '../../context/cartContext'
 
 
 export const ItemDetail = ({item}) => {
-
 const [quantity, setQuantity] = useState(0)
 const [finishAdd,setFinishAdd] = useState(true)
-
 const {addItem} = useContext(CartContext)
-
  const onAdd = (quantity) => {
     setQuantity(quantity)
  }
@@ -28,7 +25,7 @@ useEffect(() => {
         setFinishAdd(false)
     } 
 
- }, [quantity])
+}, [quantity])
 
     return(
     
@@ -36,12 +33,13 @@ useEffect(() => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-7">
-                        <img className="imageItemDetail"src={item.pictureUrl} alt={item.id}></img>
+                        <img className="imageItemDetail"src={item.pictureUrl} alt={item.title}></img>
                     </div>
                     <div className="col-md-5 textItemDetail">  
                         <h1 className="titleItemDetail">{item.title}</h1>
                         <h1 className="priceItemDetail">€{item.price}</h1>
                         <p className="descriptionItemDetail">{item.description}</p>
+                        <p className="descriptionItemDetail">Stock:{item.stock}</p>
                         <div className="buttonAddContainer">
                         { finishAdd  ? ( 
                             <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
