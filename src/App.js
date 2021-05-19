@@ -4,8 +4,9 @@ import {BrowserRouter,Switch,Route} from 'react-router-dom'
 import {ItemListContainer} from './components/itemListContainer/itemListContainer'
 import {Navbar} from './components/navbar/navbar'
 import {Cart} from './components/cart/cart'
-import data from './components/products/products.json'
 import {CartProvider} from './context/cartContext'
+import {Home} from './components/pages/home/home'
+import {FormCheckOut} from './components/formCheckOut/formCheckOut'
 
 function App() {
 
@@ -17,16 +18,19 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path='/'>
-              <ItemListContainer data={data}/>
+              <Home />
             </Route>
             <Route path='/category/:categoryId'>
-              <ItemListContainer data={data}/>
+              <ItemListContainer />
             </Route>
             <Route path='/item/:id'>
-              <ItemDetailContainer data={data} />
+              <ItemDetailContainer />
             </Route>
             <Route path='/cart'>
               <Cart/>
+            </Route>
+            <Route path='/form'>
+              <FormCheckOut/>
             </Route>
           </Switch>
         </CartProvider>

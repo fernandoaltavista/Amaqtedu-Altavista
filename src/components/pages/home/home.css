@@ -1,0 +1,16 @@
+.home{
+    text-align: center;
+}
+
+.gretting{
+    text-align: center;
+    padding-bottom: 50px;
+    margin-top: 20px;
+}
+.imgBanner{
+    width:70%;
+    height:400px;
+    border-radius:10px;
+    background-size: cover;
+    background-position: center;
+}
