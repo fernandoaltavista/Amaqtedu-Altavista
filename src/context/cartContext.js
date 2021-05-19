@@ -1,4 +1,4 @@
-import { createContext,useState,useEffect} from 'react'
+import { createContext,useState} from 'react'
 
 export const CartContext = createContext()
 
@@ -6,7 +6,7 @@ export const CartContext = createContext()
 export const CartProvider = ({children}) => {
 
     const [cart, setCart] = useState([])
-    const [quantity, setQuantity] = useState(0)
+    const [totalItems, setTotalItems] = useState(0)
 
     const addElements = (array) => {
        return array.reduce((a,b)=> a + b,0 )
@@ -25,31 +25,27 @@ export const CartProvider = ({children}) => {
         setCart([...cart,{item :item,
                         quantity:qty}])
     }
-
+    setTotalItems(totalItems + qty)
     }
-    const removeItem = (id) =>{
+
+    const removeItem = (id,qty) =>{
         const newCart = cart.filter(({item})=> item.id !== id)
         setCart(newCart)
+        setTotalItems(totalItems - qty)
     }
 
     const clear = ()=>{
         setCart([])
     }
+
     const totalCart = ()=>{
         const newCartSubTotal = cart.map(({item,quantity}) => item.price * quantity)
         return addElements(newCartSubTotal)
     }
-    const itemsTotal = () => {
-        const newCartQtyItem = cart.map(({item,quantity})=> quantity)
-        return addElements(newCartQtyItem)
-    }
-    useEffect(() => {
-        setQuantity(itemsTotal())
-        
-    }, [cart])
+
 
     return (
-        <CartContext.Provider value={{cart,addItem,removeItem,clear,totalCart,quantity}} > 
+        <CartContext.Provider value={{cart,addItem,removeItem,clear,totalCart,totalItems}} > 
             {children}
         </CartContext.Provider>
     )

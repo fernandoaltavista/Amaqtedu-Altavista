@@ -6,7 +6,6 @@ import {CartItem} from '../cartItem/cartItem'
 export const Cart = () => {
 
     const {cart,clear,totalCart} = useContext(CartContext)
-
     return (
         <div>
             <h2 className="cartTitle">🎁 Carrito</h2>
@@ -27,7 +26,7 @@ export const Cart = () => {
 
             {
             cart && cart.map(({item,quantity} ) => 
-                <CartItem key={item.id} item={item} 
+                <CartItem key={item.title} item={item} 
                                 quantity={quantity}>
                 </CartItem>
                 )
