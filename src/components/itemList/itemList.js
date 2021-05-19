@@ -2,10 +2,12 @@ import './itemList.css'
 import {Item} from '../item/item'
 import {Loader} from '../loader/loader'
 import {useParams} from 'react-router'
-import {useState,useEffect} from 'react'
+import {useState,useEffect,Fragment} from 'react'
+import {getFirestore} from '../../firebase/index'
+import { ErrorMessage } from '../errorMessage/errorMessage'
 
 
-export const ItemList = ({data}) => {
+export const ItemList = () => {
 
 const {categoryId} = useParams()
 const [items, setItems] = useState([])
@@ -16,43 +18,37 @@ const [isLoading, setIsLoading] = useState(false)
     return itemsfind
     }
 
-const getList = ((data) =>{
-    return new Promise((resolve)=> {
-    setTimeout(() => {
-        if (categoryId){
-            return resolve(getCategoryId(data))
-        } else{
-            return resolve(data)
-        }
-    }, 1500);
-})
-})
 
-useEffect(() => {
+    useEffect(() => {
         setIsLoading(true)
-        getList(data)
-        .then(result => setItems(result))
-        .finally(()=> setIsLoading(false))
-    
-}, [categoryId])
+        const db= getFirestore()
+        const itemCollection = db.collection("items")
+        itemCollection.get().then((querySnapshot) => {
+                if (querySnapshot === 0) {
+                    console.log('No results')
+                }
+        setItems(getCategoryId(querySnapshot.docs.map(doc => ({id:doc.id,...doc.data()}))))  
+        }).catch((error)=>{
+            console.log('Error',error)
+        }).finally(()=> setIsLoading(false))
+        
+    }, [categoryId])
+
 
     return (
-   
         <div className="itemList">
             {
-            categoryId ? (<h4 className="textCategory">Categoria: {categoryId.toUpperCase()}</h4>)
-            : (<h2 className="gretting">🖌 Bienvenido a nuestra tienda</h2>)
-            }
-            {
             (isLoading) ? (<Loader />)
-                : <div className="row"> 
-                
-                { items < 1 ?
-                    <p>Disulpa no tengo eso que buscas</p>
-                    :
-                    items.map(item => 
-                    <Item key={item.id} item={item} />)} 
-                </div>
+                : 
+                items < 1 ?
+                    <ErrorMessage text={`La categoria ${categoryId} no existe`} />
+                    : <Fragment>
+                        <h4 className="textCategory">{categoryId.toUpperCase()}</h4> 
+                        <div className="row">{
+                        items.map(item => 
+                        <Item key={item.title} item={item} />)} 
+                        </div>
+                    </Fragment>
             }   
         </div>
     

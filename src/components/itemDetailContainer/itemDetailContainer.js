@@ -3,38 +3,45 @@ import {useState,useEffect } from 'react'
 import { ItemDetail } from '../itemDetail/itemDetail';
 import { useParams } from 'react-router';
 import { Loader } from '../loader/loader';
+import {getFirestore} from '../../firebase/index'
+import {ErrorMessage} from '../errorMessage/errorMessage'
 
-export const ItemDetailContainer = ({data}) => {
+export const ItemDetailContainer = () => {
 
 const {id} = useParams()
-const [item, setItem] = useState([])
+const [item, setItem] = useState(null)
 const [isLoading, setIsLoading] = useState(false)
 
-const getItem = (data) => {
-   let itemfind = data.find(item => item.id === id)
-   return itemfind
-}
-
-const getList = ((data) =>{
-    return new Promise((resolve)=> {
-    setTimeout(() => { 
-        return resolve(getItem(data))
-    }, 2000);
-})
-})
 
 useEffect(() => {
-        setIsLoading(true)
-        getList(data)
-        .then(result => setItem(result))
-        .finally(()=>setIsLoading(false))
+    setIsLoading(true)
+    const db= getFirestore()
+    const itemCollection = db.collection("items")
+    const itemDetailCollection = itemCollection.doc(id)
+    itemDetailCollection.get().then((doc) => {
+            if (doc === 0) {
+                console.log('No results')
+            }
+            const existProduct = doc.data(id)
+            if (existProduct) {
+                setItem({id:doc.id , ...doc.data(id)});
+            }
+
+        
+    }).catch((error)=>{
+        console.log('Error',error)
+    }).finally(()=> setIsLoading(false))
     
-},[])
+}, [id])
 
     return (
-            <div className="itemDetailContainer">
+            <div>
                 { isLoading ? (<Loader /> ) 
-                : ( <ItemDetail item={item} /> )}
+                : 
+                item ?  <ItemDetail item={item} /> 
+                    : 
+                    <ErrorMessage text="Este producto no esta en la lista"/>
+                }
             </div>
 
     )

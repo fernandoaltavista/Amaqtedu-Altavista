@@ -1,11 +1,11 @@
 import './itemListContainer.css'
 import {ItemList} from '../itemList/itemList'
 
-export const ItemListContainer = ({data}) => {
+export const ItemListContainer = () => {
 
     return(
         <div className="itemListContainer">
-            <ItemList data={data}/>
+            <ItemList />
         </div>
     )
 }
