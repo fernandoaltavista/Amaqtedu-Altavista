@@ -48,8 +48,16 @@
 	align-content: stretch;
 }
 @media screen and (max-width: 776px) {
-    .sidebar{
-        display:none;
+    .navbar{
+        position:relative
+    }
+    .sidebar li{
+        position: relative;
+        display:block;
+    }
+    .active{
+        left:0;
+        display: block;
     }
     .icon-toggler{
         background-image: url(../../assets/images/svg/icon-menu.png);
