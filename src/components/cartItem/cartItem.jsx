@@ -19,6 +19,8 @@ export const CartItem = ({item,quantity}) =>{
                         <h5>Precio:€{item.price}</h5>
                         <p>Cantidad:{quantity}</p>
                         <p>SubTotal: €{totalCartItem(item.price,quantity)}</p>
+                        
+                            
                     </div>
                     <div>
                         <button className="buttonRemoveItem" 

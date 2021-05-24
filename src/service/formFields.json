@@ -1,0 +1,27 @@
+[
+    {
+    "id":1,
+    "label": "Nombre y Apellido",
+    "name": "name",
+    "value": "",
+    "type": "text",
+    "size" : 40
+    },
+    {
+    "id":2,
+    "label": "Telefono",
+    "name": "phone",
+    "value": "",
+    "type": "tel",
+    "size" : 20
+    },
+    {
+    "id":3,
+    "label": "Email",
+    "name": "mail",
+    "value": "",
+    "type": "email",
+    "size": 40
+    }
+
+]

@@ -1,0 +1,26 @@
+.containerInput{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+padding:8px;
+}
+
+.formLabel{
+margin: 5px;
+}
+.formInput{
+border-left: none;
+border-right: none;
+border-top: none;
+border-bottom: 1px solid grey;
+height: 2.3rem;
+font-size: 1rem;
+padding: 8px;
+background: rgba(128, 128, 128, 0.048);
+}
+.formInput:focus-visible{
+outline: none;
+border-bottom:2px solid #d68b21;
+background: rgba(128, 128, 128, 0.048);
+    }
