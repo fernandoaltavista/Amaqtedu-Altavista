@@ -2,7 +2,7 @@
     text-align: center;
     padding: 30px;
 }
-.buttonHome{
+.buttonHome,.buttonConfirm{
     padding: 10px;
     width: 200px;
     font-size: 1rem;
@@ -13,7 +13,7 @@
     border-color: #d68b21;
     color: white;
 }
-.buttonHome:hover{
+.buttonHome:hover,.buttonConfirm:hover{
     transition: .5s;
     color: white;
     border-color: #996111;

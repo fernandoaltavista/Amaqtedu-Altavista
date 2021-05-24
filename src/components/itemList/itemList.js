@@ -1,10 +1,10 @@
 import './itemList.css'
+import { Message } from '../message/message'
+import {getFirestore} from '../../firebase/index'
 import {Item} from '../item/item'
 import {Loader} from '../loader/loader'
 import {useParams} from 'react-router'
 import {useState,useEffect,Fragment} from 'react'
-import {getFirestore} from '../../firebase/index'
-import { ErrorMessage } from '../errorMessage/errorMessage'
 
 
 export const ItemList = () => {
@@ -41,12 +41,14 @@ const [isLoading, setIsLoading] = useState(false)
             (isLoading) ? (<Loader />)
                 : 
                 items < 1 ?
-                    <ErrorMessage text={`La categoria ${categoryId} no existe`} />
+                    <Message text={`La categoria ${categoryId} no existe`} type="error" />
                     : <Fragment>
                         <h4 className="textCategory">{categoryId.toUpperCase()}</h4> 
-                        <div className="row">{
-                        items.map(item => 
-                        <Item key={item.title} item={item} />)} 
+                        <div className="row">
+                        {
+                            items.map(item => 
+                                <Item key={item.title} item={item} />)
+                        } 
                         </div>
                     </Fragment>
             }   

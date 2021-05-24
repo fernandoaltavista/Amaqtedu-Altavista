@@ -4,7 +4,7 @@ import { ItemDetail } from '../itemDetail/itemDetail';
 import { useParams } from 'react-router';
 import { Loader } from '../loader/loader';
 import {getFirestore} from '../../firebase/index'
-import {ErrorMessage} from '../errorMessage/errorMessage'
+import {Message} from '../message/message'
 
 export const ItemDetailContainer = () => {
 
@@ -40,7 +40,7 @@ useEffect(() => {
                 : 
                 item ?  <ItemDetail item={item} /> 
                     : 
-                    <ErrorMessage text="Este producto no esta en la lista"/>
+                    <Message text="Este producto no esta en la lista" type="error"/>
                 }
             </div>
 
