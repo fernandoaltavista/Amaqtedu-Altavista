@@ -11,6 +11,7 @@ export const Item = ({item})=> {
                     <img className="pictureItem" src={item.pictureUrl} alt={item.title}/>
                     <h3 className="titleItem">{(item.title).toUpperCase()}</h3>
                     <strong className="priceItem">€{item.price}</strong>
+                    {(item.stock === 0 ) && <p className="outOfStock">Sin stock</p>}
                 </Link>
             </div>
         

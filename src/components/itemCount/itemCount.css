@@ -35,6 +35,9 @@
 .buttonAdd:hover{
     background-color: #d3af0d;
 }
+.buttonAdd:disabled{
+    background-color: rgba(128, 128, 128, 0.596);
+}
 .buttonCount{
     border-radius: 30px;
     font-size: 20px;
@@ -47,4 +50,7 @@
 }
 .buttonCount:hover{
     background-color: #cc8d34;
+}
+.buttonCount:disabled{
+    background-color: rgba(128, 128, 128, 0.596);
 }

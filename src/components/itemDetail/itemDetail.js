@@ -1,17 +1,27 @@
 import './itemDetail.css'
-import {ItemCount} from '../itemCount/itemCount'
-import {useState,useEffect,useContext} from 'react'
 import { Link } from 'react-router-dom'
 import {CartContext} from '../../context/cartContext'
+import {ItemCount} from '../itemCount/itemCount'
+import {useState,useEffect,useContext} from 'react'
 
 
 export const ItemDetail = ({item}) => {
+
 const [quantity, setQuantity] = useState(0)
+const [stockInCart,setStockInCart] = useState(item.stock)
 const [finishAdd,setFinishAdd] = useState(true)
-const {addItem} = useContext(CartContext)
- const onAdd = (quantity) => {
+const {addItem,cart} = useContext(CartContext)
+
+const {id}= item   
+const initialStock = (stock)=> stock <= 0 ? 0 : 1
+
+
+const quantityInCart = (id)=> cart.find(({item})=> item.id === id )
+
+
+const onAdd = (quantity) => {
     setQuantity(quantity)
- }
+}
 
 const toPay = (qtyItem)=> {
     addItem({item},qtyItem)
@@ -20,7 +30,13 @@ const toPay = (qtyItem)=> {
 
 
 useEffect(() => {
-
+    
+    if (quantityInCart(id) !== undefined ){
+        let stockTemporaly = quantityInCart(id).item.stock
+        let quantityTemporaly = quantityInCart(id).quantity
+        setStockInCart(stockTemporaly - quantityTemporaly)
+    }
+    
     if (quantity !== 0) {
         setFinishAdd(false)
     } 
@@ -39,10 +55,11 @@ useEffect(() => {
                         <h1 className="titleItemDetail">{item.title}</h1>
                         <h1 className="priceItemDetail">€{item.price}</h1>
                         <p className="descriptionItemDetail">{item.description}</p>
-                        <p className="descriptionItemDetail">Stock:{item.stock}</p>
+                        <p className="stockItemDetail">Stock: {item.stock === stockInCart ?
+                            item.stock : ` ${stockInCart} - Temporal`}</p>
                         <div className="buttonAddContainer">
                         { finishAdd  ? ( 
-                            <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
+                            <ItemCount stock={stockInCart} initial={initialStock(item.stock)} onAdd={onAdd}/>
                             ) 
                             :( 
                                 <div>

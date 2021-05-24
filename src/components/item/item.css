@@ -5,13 +5,11 @@ padding:10px;
     text-decoration: none;
     color: black;
     border-radius: 30px;
-    
 }
 .pictureItem{
     width: 200px;
     height: 200px;
     object-fit:cover;
-
 }
 
 .titleItem{
@@ -24,4 +22,9 @@ padding:10px;
 .priceItem{
     font-size: 1.5rem;
     color: #FFB141;
+}
+.outOfStock{
+    font-size: .8rem;
+    color:red;
+    font-weight: bold;
 }
