@@ -12,6 +12,7 @@
     border: solid 1px;
     border-color: #d68b21;
     color: white;
+    margin: 20px;
 }
 .buttonHome:hover,.buttonConfirm:hover{
     transition: .5s;
@@ -31,6 +32,11 @@
 .cartEmptyContainer{
     padding: 10px;
     text-align: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
 }
 
@@ -52,7 +58,10 @@
 }
 .totalCart{
     text-align: right;
-    padding: 40px;
+    padding: 20px;
     font-size: 1.3rem;
     font-weight: bold;
+}
+.during-popup{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }

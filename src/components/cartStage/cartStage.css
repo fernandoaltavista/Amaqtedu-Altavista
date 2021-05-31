@@ -1,0 +1,57 @@
+.stages{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: flex-start;
+    padding: 10px;
+}
+.stage{
+    background-image:url(../../assets/images/png/cheque.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:30px;
+    height: 30px;
+    display: block;
+    border: none;
+}
+.selectedStage{
+    background-image: url(../../assets/images/png/cheque.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:30px;
+    height: 30px;
+    display: block;
+    border-radius:100%;
+    background-color: orange;
+
+}
+.stageItem{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: flex-start;
+    padding: 10px;
+}
+
+.stageTextSelected{
+    font-size: 0.8rem;
+    padding:10px;
+    margin-top: 1rem;
+    border-bottom:1px orange solid;
+    text-decoration: none;
+}
+.stageText{
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    padding:10px;
+    text-decoration: none;
+    color: black;
+}
+.stages a:hover{
+    color: black;
+    text-decoration: none;
+}

@@ -1,18 +1,28 @@
 import './cart.css'
-import {useContext} from 'react'
-import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/cartContext'
-import {CartItem} from '../cartItem/cartItem'
+import { CartStage} from '../cartStage/cartStage'
 import { Fragment } from 'react'
+import { Link } from 'react-router-dom'
+import {CartItem} from '../cartItem/cartItem'
+import {PopUp} from '../popUp/popUp'
+import {useContext, useState} from 'react'
 
 export const Cart = () => {
 
-    const {cart,clear,totalPriceCart} = useContext(CartContext)
+const {cart,clear,totalPriceCart,emptyStockAndRest,clearEmptyStock} = useContext(CartContext)
+const [stage,setStage]=useState(1)   //COMPONENTE CART STAGE MAS FUNCIONAL
+
+const [emptyStock,rest,id] = emptyStockAndRest
+
     return (
-        <div>
-            <h2 className="cartTitle">🎁 Carrito</h2>
+        <div className="cart">
+            {
+                emptyStock && <PopUp showPopUp={emptyStock} rest={rest} id={id}/>
+            }
+
             {cart.length > 0 ?
             <Fragment>
+                <CartStage stageActive={stage}/>
                 <div className="buttonRemoveAllContainer">
                     <button className="buttonRemoveAll" 
                         onClick={()=>clear()}>Borrar Todo</button>  
@@ -20,12 +30,13 @@ export const Cart = () => {
                 
                 {cart.map(({item,quantity} ) => 
                     <CartItem key={item.title} item={item} 
-                                    quantity={quantity}>
+                            quantity={quantity} showButtonRemove={true}>
                     </CartItem>
                 )}
                 
                 <p className="totalCart">Total Compra: €{totalPriceCart()}</p>
-                <Link to="/form"><button className="buttonConfirm">Confirmar Compra</button></Link> 
+                <Link to="/form"><button className="buttonConfirm" onClick={()=>clearEmptyStock()}
+                >Confirmar Compra</button></Link> 
             </Fragment>
 
                 :
@@ -36,9 +47,6 @@ export const Cart = () => {
                 </div>
                 
             }
-
-
-            
         </div>
     )
 }
