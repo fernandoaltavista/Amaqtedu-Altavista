@@ -1,0 +1,45 @@
+
+footer { margin-top: auto }
+
+
+.footer{
+    background-color: #be7f11;
+    padding: 8px;
+    left: 0;
+    bottom: 0;
+	right: 0;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footerIcons{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
+.logoGitHub{
+    background-image: url(../../assets/images/svg/github.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    display: block;
+    margin-right: 10px;
+}
+.logoLinke{
+    background-image: url(../../assets/images/svg/linkedin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+.textFooter{
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: 100;
+}
