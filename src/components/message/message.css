@@ -6,12 +6,13 @@
     height: 500px;
 }
 .textMessage{
+    text-align: center;
     font-size: 1.5rem;
     margin-left:auto;
     margin-right: auto;
     font-weight: bold;
 }
-.imageProblem{
+.imageMessage{
     height:150px;
     width:150px;
     margin:20px;
@@ -32,4 +33,11 @@
     color: white;
     border-color: #996111;
     background-color: #996111;
+}
+@media screen and (max-width: 776px) {
+    .imageMessage{
+        height:100px;
+        width:100px;
+        margin:10px;
+    }
 }

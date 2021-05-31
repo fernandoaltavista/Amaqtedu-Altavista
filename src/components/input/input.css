@@ -21,6 +21,6 @@ background: rgba(128, 128, 128, 0.048);
 }
 .formInput:focus-visible{
 outline: none;
-border-bottom:2px solid #d68b21;
+border-bottom:1px solid #d68b21;
 background: rgba(128, 128, 128, 0.048);
     }

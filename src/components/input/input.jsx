@@ -1,6 +1,5 @@
 import './input.css'
-
-export const Input = ({label,name,type,size,onInput}) => {
+export const Input = ({label,name,type,placeholder,pattern,title,size,onInput,onBlur}) => {
 
     return (
                 <div className="containerInput">
@@ -8,8 +7,12 @@ export const Input = ({label,name,type,size,onInput}) => {
                     <input  className="formInput"
                                 type={type}
                                 name={name}
+                                title={title}
+                                placeholder={placeholder}
+                                pattern={pattern}
                                 size={size}
                                 onInput={onInput}
+                                onBlur={onBlur}
                     ></input>
                 </div>
     )
