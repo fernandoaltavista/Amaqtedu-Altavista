@@ -4,13 +4,29 @@ padding: 15px;
 text-align: center;
 }
 .formCheckOut{
-text-align: center;
 padding: 8px;
+border-right: 1px solid grey;
 }
-
+.buttonBack{
+padding: 10px;
+margin:40px 40px 0px 0px;
+width: 150px;
+font-size: 1rem;
+border-radius: 10px;
+background-color: white;
+border: #d68b21 solid 1px;
+border-color: #d68b21;
+color: #d68b21;
+cursor: pointer;
+}
+.buttonBack:hover{
+    color: white;
+    background-color: #d68b21;
+    transition: .5s;
+}
 .buttonSubmit{
 padding: 10px;
-margin-top:40px;
+margin:40px;
 width: 200px;
 font-size: 1rem;
 font-weight: bold;
@@ -20,27 +36,15 @@ border: solid 1px;
 border-color: #d68b21;
 color: white;
 cursor: pointer;
+transition: .5s;
 }
 .buttonSubmit:disabled{
     cursor: not-allowed;
     background-color: grey;
     border-color: grey;
 }
-.succesMessage{
-    margin-left:auto;
-    margin-right: auto;
-    padding:20px;
-    font-weight: bold;
-}
-.containerSuccesMessage{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 500px;
-}
-.succesImage{
-height:200px;
-width:200px;
-margin:20px;
+@media screen and (max-width: 776px) {
+    .formCheckOut{
+    border-right:none;
+    }
 }

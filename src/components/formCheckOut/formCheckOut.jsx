@@ -1,19 +1,23 @@
 import './formCheckOut.css'
 import { Fragment } from 'react'
+import { Message } from '../message/message'
+import { OrderContext } from '../../context/orderContext'
 import {CartContext} from '../../context/cartContext'
 import {CartItem} from '../cartItem/cartItem'
+import {CartStage} from '../cartStage/cartStage'
 import {getFirestore} from '../../firebase/index'
 import {Input} from '../input/input'
+import {Link} from 'react-router-dom'
 import {useContext,useState} from 'react'
 import firebase from 'firebase/app'
 import formFields from '../../service/formFields.json'
-import { Message } from '../message/message'
+
 
 export const FormCheckOut = () => {
 
-const {cart,totalPriceCart,clear} = useContext(CartContext)
-const [isFinish,setIsFinish] = useState(false)
-const [order,setOrder] = useState()
+const {cart,totalPriceCart} = useContext(CartContext)
+const {addOrder,sendEmail} = useContext(OrderContext)
+const [error, setError] = useState(false)
 const [form, setForm] = useState(
     {
     name: '',
@@ -34,51 +38,58 @@ const newCart = cart.map(({item,quantity}) => {
     return items
 })
 
-const handleInput = (e) =>{
+const validation = (mail,name,phone) => {
+    
+    const regexMail =  /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
+    const nameRegex = /^[a-z]+/gi
+    const phoneRegex = /^[0-9]*$/
+    
+    if ((!regexMail.test(mail)) || !(nameRegex.test(name)) || (!phoneRegex.test(phone)) ){
+        setError(false)
+    } else {
+        setError(true)
+        
+    }
+}
 
-const value= (e.target.value).trim()
-        setForm({
+const disabledButton = () => [name, phone, mail].includes( undefined ||'') || !error
+
+const handleInput = (e) =>{
+    e.preventDefault()
+    validation(mail,name,phone)
+    const value= e.target.value.trim()
+    setForm({
         ...form,
         [e.target.name]: value
     })
     
-
-}
-const handleOrder= () =>{
-    const db = getFirestore();
-    const orders = db.collection("orders");
-
-    const newOrder = {
-        form,
-        items: newCart,
-        total: totalPriceCart(),
-        date: firebase.firestore.Timestamp.fromDate(new Date())
-    }
-    orders.add(newOrder).then(({ id }) => {
-        setOrder({id: id, ...newOrder});
-        setIsFinish(true)
-        updateStock()
-        clear()
-    }).catch((error) => {
-        console.log('Error creating order', error);
-    })
-    
 }
 
-const canBuy = (stock,qty) => {
-    return stock >= qty
-}
 
-const updateStock = () =>{
-    const db=getFirestore()
-    const batch = db.batch()
-    cart.forEach(({item,quantity}) => {
-        const itemRef = db.collection("items").doc(item.id)
-        if (canBuy(item.stock,quantity)) {    
-            batch.update(itemRef,{stock: item.stock - quantity})
+const handleOrder= (e) =>{
+
+    if (error) {
+        const db = getFirestore();
+        const orders = db.collection("orders");
+
+        const newOrder = {
+            buyer:form,
+            items: newCart,
+            total: totalPriceCart(),
+            date: firebase.firestore.Timestamp.fromDate(new Date())
         } 
-    })
-    batch.commit().then(r => console.log('Finalizo'))
+        
+        orders.add(newOrder).then(({ id }) => {
+            addOrder({...newOrder,id: id})
+            sendEmail({...newOrder,id: id})
+        }).catch((error) => {
+            console.log('Error creating order', error);
+        }).finally((error) => {
+            console.log('Finalizo orden')
+            
+        })
+
+        }
 }
 
     return (
@@ -86,39 +97,46 @@ const updateStock = () =>{
             { 
             cart.length > 0  ? 
                 <Fragment>
-                <div className="row">
-                    <div className="col-md-6">
-                        <h4 className="titleForm">🧾 Ingrese sus datos para finalizar compra</h4>
+                    <CartStage stageActive={2}/>
+                    <div className="container">
+                    <div className="row">
+                    <div className="col-md-8">
                         <div className="formCheckOut"> 
-                            {formFields.map(({id,name,value,type,label,size}) => 
+                            {formFields.map(({id,name,placeholder,pattern,title,value,type,label,size}) => 
                             <div key={id}>
                                 <Input label={label}
                                     value={value}
                                     name={name}
+                                    placeholder={placeholder}
+                                    title={title}
+                                    pattern={pattern}
                                     type={type}
                                     size={size}
                                     onInput={handleInput} />
                             </div>)}
-                            <button className="buttonSubmit" disabled={[name, phone, mail].includes( undefined ||'')}
-                                type='submit' onClick={()=>handleOrder()}>Finalizar Compra</button>
+                            
+                            <Link to="/cart"><button className="buttonBack"
+                                >Volver</button></Link>
+
+                            <Link to={error ? "/complete" : "/form"}><button className="buttonSubmit" disabled={disabledButton()}
+                                type='submit' onClick={(e)=>handleOrder(e)}>Finalizar Compra</button></Link>
                         </div>
-                    </div> 
-                    <div className="col-md-6">
-                        <h4 className="titleForm"> 📫 Tu carrito</h4> 
+                    </div>
+                    <div className="col-md-4">
                     {
                         cart && cart.map(({item,quantity} ) => 
                             <CartItem key={item.title} item={item} 
-                                    quantity={quantity}>
+                                    quantity={quantity} showButtonRemove={false}>
                             </CartItem>)
                     }
                     <p className="totalCart">Total Compra: €{totalPriceCart()}</p>
                     </div>
                 </div>
+                </div> 
                 </Fragment>
-            : isFinish ?
-                    <Message text="Gracias por tu compra" type="succes" />
-                :
+            : 
                     <Message text={`Todavia no compraste nada`} type={'error'} />
+            
             }
         </Fragment> 
     )

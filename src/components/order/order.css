@@ -1,0 +1,23 @@
+.order{
+    border: 1px solid black;
+}
+.titleOrder{
+    text-align: center;
+    padding: 5px;
+}
+.orderItem{
+    border-bottom:1px solid black ;
+    padding: 5px;
+}
+.orderProduct{
+    margin-right: 8px;
+}
+.orderTotal{
+    padding: 10px;
+    margin-top: 10px;
+    text-align: right;
+}
+.orderMessage{
+    margin-top: 10px;
+    font-style: italic;
+}
