@@ -18,7 +18,6 @@ const [isLoading, setIsLoading] = useState(false)
     return itemsfind
     }
 
-
     useEffect(() => {
         setIsLoading(true)
         const db= getFirestore()
@@ -38,7 +37,7 @@ const [isLoading, setIsLoading] = useState(false)
     return (
         <div className="itemList">
             {
-            (isLoading) ? (<Loader />)
+            isLoading ? <Loader text="Cargando lista de productos" />
                 : 
                 items < 1 ?
                     <Message text={`La categoria ${categoryId} no existe`} type="error" />

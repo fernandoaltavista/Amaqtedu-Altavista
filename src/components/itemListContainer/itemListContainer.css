@@ -1,5 +1,9 @@
 .itemListContainer{
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    flex: 0;
 }
 .contador{
     font-size: 20px;

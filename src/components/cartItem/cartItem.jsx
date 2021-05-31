@@ -2,7 +2,7 @@ import './cartItem.css'
 import {useContext} from 'react'
 import {CartContext} from '../../context/cartContext'
 
-export const CartItem = ({item,quantity}) =>{
+export const CartItem = ({item,quantity,showButtonRemove}) =>{
 
     const {removeItem} = useContext(CartContext)
 
@@ -23,8 +23,10 @@ export const CartItem = ({item,quantity}) =>{
                             
                     </div>
                     <div>
+                        {showButtonRemove && 
                         <button className="buttonRemoveItem" 
-                        onClick={()=>removeItem(item.id,quantity)}></button>
+                        onClick={()=>removeItem(item.id,quantity)}></button>}
+                        
                     </div>
                 </div>
     )

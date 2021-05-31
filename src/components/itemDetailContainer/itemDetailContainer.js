@@ -12,7 +12,6 @@ const {id} = useParams()
 const [item, setItem] = useState(null)
 const [isLoading, setIsLoading] = useState(false)
 
-
 useEffect(() => {
     setIsLoading(true)
     const db= getFirestore()
@@ -36,7 +35,7 @@ useEffect(() => {
 
     return (
             <div>
-                { isLoading ? (<Loader /> ) 
+                { isLoading ? (<Loader text="Cargando producto..." /> ) 
                 : 
                 item ?  <ItemDetail item={item} /> 
                     : 

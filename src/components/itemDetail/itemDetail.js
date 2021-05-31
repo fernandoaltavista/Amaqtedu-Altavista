@@ -8,15 +8,11 @@ import {useState,useEffect,useContext} from 'react'
 export const ItemDetail = ({item}) => {
 
 const [quantity, setQuantity] = useState(0)
-const [stockInCart,setStockInCart] = useState(item.stock)
 const [finishAdd,setFinishAdd] = useState(true)
-const {addItem,cart} = useContext(CartContext)
-
-const {id}= item   
-const initialStock = (stock)=> stock <= 0 ? 0 : 1
+const {addItem} = useContext(CartContext)
 
 
-const quantityInCart = (id)=> cart.find(({item})=> item.id === id )
+const initialStock = (stock) => stock <= 0 ? 0 : 1
 
 
 const onAdd = (quantity) => {
@@ -31,11 +27,6 @@ const toPay = (qtyItem)=> {
 
 useEffect(() => {
     
-    if (quantityInCart(id) !== undefined ){
-        let stockTemporaly = quantityInCart(id).item.stock
-        let quantityTemporaly = quantityInCart(id).quantity
-        setStockInCart(stockTemporaly - quantityTemporaly)
-    }
     
     if (quantity !== 0) {
         setFinishAdd(false)
@@ -55,20 +46,21 @@ useEffect(() => {
                         <h1 className="titleItemDetail">{item.title}</h1>
                         <h1 className="priceItemDetail">€{item.price}</h1>
                         <p className="descriptionItemDetail">{item.description}</p>
-                        <p className="stockItemDetail">Stock: {item.stock === stockInCart ?
-                            item.stock : ` ${stockInCart} - Temporal`}</p>
+                        <p className="stockItemDetail">Stock: {item.stock}</p>
                         <div className="buttonAddContainer">
-                        { finishAdd  ? ( 
-                            <ItemCount stock={stockInCart} initial={initialStock(item.stock)} onAdd={onAdd}/>
-                            ) 
-                            :( 
+                        { finishAdd  ? 
+                            <ItemCount stock={item.stock} initial={initialStock(item.stock)} 
+                                        onAdd={onAdd}/>
+                            :
                                 <div>
-                                    <Link to="/cart"><button onClick={()=>toPay(quantity)}
-                                    className="buttonFinish">
-                                        Terminar compra
-                                    </button></Link>
+                                    <Link to="/cart">
+                                        <button onClick={()=>toPay(quantity)} 
+                                                className="buttonFinish">
+                                            Terminar compra
+                                        </button>
+                                    </Link>
                                 </div>
-                            )
+                            
                         }
                         </div>
                     </div>
