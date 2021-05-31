@@ -1,11 +1,29 @@
 import './home.css'
-import imgBanner from '../../../assets/images/png/banner.jpg'
+import logo from '../../../assets/images/png/logo-banner.png'
+import { Fragment } from 'react'
+import {Link} from 'react-router-dom'
+import category from '../../../service/category.json'
 
 export const Home = () => {
     return (
-        <div className="home">
-        <h2 className="gretting">🖌 Bienvenido a nuestra tienda</h2>
-        <img src={imgBanner} alt='banner' className="imgBanner"></img>
-        </div>
+        <Fragment>
+            <div className="home">
+                <img className="logoBanner" src={logo} alt="logo"></img>
+                <p className="textBanner">AMAQTEDU es un proyecto social que desarrolla cursos de 
+                    formación y desarrollo personal relacionados con el arte 
+                    para personas sin hogar.</p> 
+                <h2 className="gretting">Sumate!</h2>
+            </div>
+            <div className="categoryItems">
+                {category.map(({categoryName,id,categoryImage,route}) =>
+                    <div className="category" key={id}>
+                        <Link to={route}>
+                        <img className="imageCategory" src={categoryImage} alt={categoryName} ></img>
+                        <p className="textCategory">{categoryName.toUpperCase()}</p></Link>
+                    </div>
+                        )
+                }
+            </div>
+        </Fragment>
     )
 }
