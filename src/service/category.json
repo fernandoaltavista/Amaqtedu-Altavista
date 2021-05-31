@@ -1,0 +1,15 @@
+[
+    {
+    "id":1,
+    "categoryName": "Lienzos",
+    "categoryImage": "https://firebasestorage.googleapis.com/v0/b/amaqtedu-faa62.appspot.com/o/IMG_7190.JPG?alt=media&token=18baab35-bde1-484c-9bd1-6655c60a7de1",
+    "route":"/category/lienzos"
+    },
+    {
+    "id":2,
+    "categoryName": "Remeras",
+    "categoryImage": "https://firebasestorage.googleapis.com/v0/b/amaqtedu-faa62.appspot.com/o/Tezza_2020_07_22_190315144.jpg?alt=media&token=b0ce297d-41b2-408f-bd8c-880228ab4d53",
+    "route":"/category/remeras"
+    }
+
+]

@@ -3,14 +3,21 @@
     "id":1,
     "label": "Nombre y Apellido",
     "name": "name",
+    "title": "Ingrese al menos 8 letras",
+    "placeholder":"Juan Perez",
+    "pattern":"[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{8,35}",
     "value": "",
     "type": "text",
-    "size" : 40
+    "size":35
+    
     },
     {
     "id":2,
     "label": "Telefono",
     "name": "phone",
+    "title": "Numero ingresado invalido",
+    "placeholder":"2324522729",
+    "pattern":"[0-9]{0,13}",
     "value": "",
     "type": "tel",
     "size" : 20
@@ -19,9 +26,11 @@
     "id":3,
     "label": "Email",
     "name": "mail",
+    "title": "Mail invalido",
+    "placeholder":"example@gmail.com",
     "value": "",
     "type": "email",
-    "size": 40
+    "size": 30
     }
 
 ]
