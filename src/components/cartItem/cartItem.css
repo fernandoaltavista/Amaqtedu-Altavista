@@ -2,7 +2,7 @@
     display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 	align-items: center;
 	align-content: stretch;
     border-radius: 10px;
@@ -12,12 +12,19 @@
 }
 .cartItemInfo{
     width:50%;
+    margin: 5px;
+    font-weight: bold;
+}
+.cartItemText{
+    font-family: 'Staatliches', cursive;
 }
 .imgItemCart{
     width:150px;
     height: 150px;
     background-size: cover;
+    border-radius: 20px;
 }
+
 .buttonRemoveItem{
     background-image: url(../../assets/images/svg/boton-eliminar.png);
     background-repeat: no-repeat;

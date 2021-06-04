@@ -38,14 +38,14 @@
 }
 
 .stageTextSelected{
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding:10px;
     margin-top: 1rem;
     border-bottom:1px orange solid;
     text-decoration: none;
 }
 .stageText{
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-top: 1rem;
     padding:10px;
     text-decoration: none;

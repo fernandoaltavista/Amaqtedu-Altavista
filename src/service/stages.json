@@ -1,0 +1,18 @@
+[
+    { 
+        "idStage" : 1,
+        "route" : "/cart",
+        "text" : "Asegurate que tus productos sean los correctos"
+    },
+    { 
+        "idStage" : 2,
+        "route" : "/form",
+        "text" : "Llena el formulario con tus datos"
+    },
+    { 
+        "idStage" : 3,
+        "route" : "/completed",
+        "text" : "Listo! Disfruta de tu compra"
+        
+    }
+]

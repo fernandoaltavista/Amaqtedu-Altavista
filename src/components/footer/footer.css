@@ -3,7 +3,7 @@ footer { margin-top: auto }
 
 
 .footer{
-    background-color: #be7f11;
+    background: linear-gradient(to bottom, orange 23%, #000000 100%);
     padding: 8px;
     left: 0;
     bottom: 0;
@@ -38,8 +38,17 @@ footer { margin-top: auto }
     width: 30px;
     display: block;
 }
+.iconReact{
+    background-image: url(../../assets/images/svg/react.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30px;
+    width: 34px;
+    display: block;
+}
 .textFooter{
+    
     margin-right: 10px;
     margin-left: 10px;
-    font-weight: 100;
+    font-weight: bold;
 }

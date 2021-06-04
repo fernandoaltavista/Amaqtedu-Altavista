@@ -8,8 +8,9 @@
   margin-top: 50px;
 }
 .textLoader{
+  font-family: 'Staatliches', cursive;
   padding: 15px;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 .sk-fading-circle {
   margin: 100px auto;

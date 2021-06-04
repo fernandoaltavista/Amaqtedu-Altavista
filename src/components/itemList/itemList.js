@@ -35,22 +35,26 @@ const [isLoading, setIsLoading] = useState(false)
 
 
     return (
-        <div className="itemList">
+        <Fragment>
             {
             isLoading ? <Loader text="Cargando lista de productos" />
                 : 
                 items < 1 ?
                     <Message text={`La categoria ${categoryId} no existe`} type="error" />
                     : <Fragment>
-                        <h4 className="textCategory">{categoryId.toUpperCase()}</h4> 
-                        <div className="row">
+                        <h4 className="textCategory">{categoryId.toUpperCase()}</h4>
+                        <div className="listItems">
+                        <div className="container ">
+                        <div className="row ">
                         {
                             items.map(item => 
                                 <Item key={item.title} item={item} />)
                         } 
                         </div>
+                        </div>
+                        </div>
                     </Fragment>
             }   
-        </div>
+        </Fragment>
     
 )}

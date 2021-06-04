@@ -3,57 +3,36 @@ import { Fragment } from 'react'
 import { Message } from '../message/message'
 import {CartContext} from '../../context/cartContext'
 import {CartStage} from '../cartStage/cartStage'
-import {getFirestore} from '../../firebase/index'
 import {Loader} from '../loader/loader'
 import {OrderContext} from '../../context/orderContext'
-import {useContext,useEffect,useState} from 'react'
+import {useContext,useEffect} from 'react'
+import {useLocation} from 'react-router-dom'
 
 export const Order = () => {
 
-const {order} = useContext(OrderContext)
-const {cart,clear} = useContext(CartContext)
-const [finish,setFinish] = useState(false)
+const {stageSelected,order,finishOrder} = useContext(OrderContext)
+const {clear} = useContext(CartContext)
 
-
-const canBuy = (stock,qty) => {
-    return stock >= qty
-}
-const updateStock = () =>{
-
-    const db=getFirestore()
-    const batch = db.batch()
-    cart.forEach(({item,quantity}) => {
-        const itemRef = db.collection("items").doc(item.id)
-        if (canBuy(item.stock,quantity)) {    
-            batch.update(itemRef,{stock: item.stock - quantity})
-        } 
-    })
-    batch.commit().then(r => {
-
-        console.log('Finalizo Actualizacion')
-        setFinish(false)})
-}
+const location = useLocation()
+const routeNow = location.pathname
 
 useEffect(() => {
-
-    
-    setFinish(true)
-    updateStock()
     clear()
-    
     return  () => {
     }
 }, [])
 
     return (
         <Fragment>
-        {
-            finish ? 
-            <Loader text="Generando la orden..." /> :
+        {  
+                finishOrder ?  <Loader text="Generando la orden..." /> 
+        
+                :
+
                 order ?
                 <Fragment> 
-                    <CartStage stageActive={3}/>
-                    <div className="container">
+                    <CartStage stageActive={stageSelected(routeNow)}/>
+                    <div className="container orderContainer">
                     <div className="row">
                         <div className="col-md-6 order"> 
                             <h2 className="titleOrder">Tu orden</h2>
@@ -78,7 +57,8 @@ useEffect(() => {
                     </div>
                     </div>
                 </Fragment>
-                    :  <Message text="No realizaste ninguna compra" type="error" />
+
+            :  <Message text="No realizaste ninguna compra" type="error" />
         }
         </Fragment>
     )

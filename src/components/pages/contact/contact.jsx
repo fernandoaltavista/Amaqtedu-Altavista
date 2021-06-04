@@ -12,28 +12,23 @@ const [error,setError] = useState(false)
 const [form,setForm] = useState({
     name:'',
     phone:'',
-    mail:''
+    mail:'',
+    text:'',
 })
 
+const {name,phone,mail,text} = form
 
 
-const {name,phone,mail} = form
-
-
-const validation = (mail,name,phone) => {
+const validationForm = (mail) => {
     
     const regexMail =  /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
-    const nameRegex = /^[a-z]+/gi
-    const phoneRegex = /^[0-9]*$/
-    
-    if ((!regexMail.test(mail)) || !(nameRegex.test(name)) || (!phoneRegex.test(phone)) ){
+
+    if (!regexMail.test(mail)){
         setError(false)
     } else {
         setError(true)
-        
     }
 }
-
 
 const sendEmail = (e) => {
     e.preventDefault()
@@ -43,30 +38,34 @@ const sendEmail = (e) => {
         }, (error) => {
         setSendMail(false)
     });
+    
 }
 
-const disabledButton = () => [name, phone, mail].includes( undefined ||'') || !error
+const disabledButton = () => [name, phone, mail,text].includes( undefined ||'') || !error
 
-const handleInput = (e) =>{
+const handleInput = (e) =>{ 
     e.preventDefault()
-    validation(mail,name,phone)
+    validationForm(mail)
     const value= e.target.value.trim()
     setForm({
         ...form,
         [e.target.name]: value
-    })
+    }) 
+    
 }
 const handleBlur = (e) =>{
     e.preventDefault()
+    validationForm(mail,name,phone)
     const value= e.target.value.trim()
     setForm({
         ...form,
         [e.target.name]: value
     })
+    
 }  
     return(
             <div className="container contact">
-                <div className="row">
+                <div className="row ">
                     <div className="col-md-6">
                         <h2 className="titleContact">Comunicate</h2>
                         {!sendMail ?
@@ -81,11 +80,18 @@ const handleBlur = (e) =>{
                                         pattern={pattern}
                                         type={type}
                                         size={size}
-                                        onInput={handleInput}
-                                        onBlur={handleBlur}/>
+                                        onInput={(e)=>handleInput(e)}
+                                        onBlur={(e)=>handleBlur(e)}/>
                                 </div>)}
-                                <input className="buttonSubmit" type="submit" 
-                                disabled={disabledButton()}  value="Enviar" />
+                                <div className="textAreaContainer">
+                                    <label>Consulta</label>
+                                    <textarea name="text" onInput={handleInput} 
+                                            placeholder="Ingrese su consulta">
+                                    </textarea>
+                                    <input className="buttonSubmit" type="submit" 
+                                        disabled={disabledButton()}  value="Enviar" />
+                                </div>
+                                
                             </form>
                         : <Message text="Tu mensaje fue existoso. En breve te contestaremos"
                                     type="succes"/>

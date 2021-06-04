@@ -1,4 +1,6 @@
-
+.itemDetail{
+    padding-bottom: 30vh;
+}
 .itemDetail >.container{
     background-color: rgb(255, 255, 255); 
     margin-top: 50px;

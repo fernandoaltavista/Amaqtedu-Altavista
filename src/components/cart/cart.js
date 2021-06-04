@@ -1,18 +1,24 @@
 import './cart.css'
 import { CartContext } from '../../context/cartContext'
+import {OrderContext} from '../../context/orderContext'
 import { CartStage} from '../cartStage/cartStage'
 import { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import { Link ,useLocation} from 'react-router-dom'
 import {CartItem} from '../cartItem/cartItem'
 import {PopUp} from '../popUp/popUp'
-import {useContext, useState} from 'react'
+import {useContext} from 'react'
+
 
 export const Cart = () => {
-
+    
+const {stageSelected} = useContext(OrderContext)
 const {cart,clear,totalPriceCart,emptyStockAndRest,clearEmptyStock} = useContext(CartContext)
-const [stage,setStage]=useState(1)   //COMPONENTE CART STAGE MAS FUNCIONAL
 
 const [emptyStock,rest,id] = emptyStockAndRest
+
+const location = useLocation()
+const routeNow = location.pathname
+
 
     return (
         <div className="cart">
@@ -22,7 +28,7 @@ const [emptyStock,rest,id] = emptyStockAndRest
 
             {cart.length > 0 ?
             <Fragment>
-                <CartStage stageActive={stage}/>
+                <CartStage stageActive={stageSelected(routeNow)}/>
                 <div className="buttonRemoveAllContainer">
                     <button className="buttonRemoveAll" 
                         onClick={()=>clear()}>Borrar Todo</button>  

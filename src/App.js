@@ -39,7 +39,7 @@ function App() {
               <Route path='/form'>
                 <FormCheckOut/>
               </Route>
-              <Route path='/complete'>
+              <Route path='/completed'>
                 <Order/>
               </Route>
             <Route path='/contact'>

@@ -1,10 +1,10 @@
 import './input.css'
-export const Input = ({label,name,type,placeholder,pattern,title,size,onInput,onBlur}) => {
+export const Input = ({label,name,type,placeholder,pattern,title,size,onInput,onBlur,error}) => {
 
     return (
                 <div className="containerInput">
                     <label className="formLabel">{label}</label>
-                    <input  className="formInput"
+                    <input  className={error ? "formInput":"inputError"}
                                 type={type}
                                 name={name}
                                 title={title}

@@ -2,6 +2,7 @@
     margin-top: 30px;
 }
 .titleContact{
+    font-family: 'Staatliches', cursive;
     padding: 10px;
     text-align: center;
     text-decoration:solid
@@ -41,4 +42,23 @@
     width: 50px;
     margin: 30px;
     display: block;
+}
+.textAreaContainer{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: stretch;
+    padding: 8px;
+    margin-top: 10px;
+}
+textarea{
+    height: 300px;
+    width: 300px;
+}
+@media screen and (max-width: 776px) {
+    .contact{
+        height:110vh;
+    }
 }

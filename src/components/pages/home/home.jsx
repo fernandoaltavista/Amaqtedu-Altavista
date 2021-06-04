@@ -1,8 +1,8 @@
 import './home.css'
-import logo from '../../../assets/images/png/logo-banner.png'
 import { Fragment } from 'react'
 import {Link} from 'react-router-dom'
 import category from '../../../service/category.json'
+import logo from '../../../assets/images/png/logo-banner.png'
 
 export const Home = () => {
     return (
@@ -19,7 +19,7 @@ export const Home = () => {
                     <div className="category" key={id}>
                         <Link to={route}>
                         <img className="imageCategory" src={categoryImage} alt={categoryName} ></img>
-                        <p className="textCategory">{categoryName.toUpperCase()}</p></Link>
+                        <p className="textCategoryHome">{categoryName.toUpperCase()}</p></Link>
                     </div>
                         )
                 }
