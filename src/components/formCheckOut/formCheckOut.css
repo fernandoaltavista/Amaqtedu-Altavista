@@ -54,7 +54,7 @@ transition: .5s;
 .textFinishOrder{
     margin: 20px;
 }
-.buttonFinish{
+.buttonFinishOrder{
 padding: 20px;
 margin:40px;
 width: 200px;
@@ -68,7 +68,7 @@ color: white;
 cursor: pointer;
 transition: .5s;
 }
-.buttonFinish:hover{
+.buttonFinishOrder:hover{
     background-color: #ac4b13;
     border-color: #c0591e;
     transition: .5s;

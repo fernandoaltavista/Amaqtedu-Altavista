@@ -169,10 +169,11 @@ const generateOrderSubmit = () =>{
                             <h3 className="textFinishOrder">Ya casi!</h3>
                             <img src={waiting} alt="waiting" className="imageWaiting"></img>
                             <Link to="/completed">
-                                    <input className="buttonFinish"
+                                    <input className="buttonFinishOrder"
                                     type='submit' onClick={generateOrderSubmit} 
                                     value="Finalizar Compra"></input></Link>
                         </div>
+                        
                         :
                         <Message text={`Ocurrio un error en el formulario`} type={'error'} />
                 }
