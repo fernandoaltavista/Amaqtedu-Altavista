@@ -9,7 +9,8 @@ export const OrderProvider = ({children}) => {
     
     const [order,setOrder] = useState()
     const [finishOrder,setFinishOrder] = useState(false)
-    
+
+
     const stageSelected = (routeNow)=>{
     const  stagesFind = stages.find(({route}) => route === routeNow)
     return stagesFind.idStage
@@ -36,6 +37,7 @@ export const OrderProvider = ({children}) => {
             });
         
     }
+
 
     return(
         <OrderContext.Provider value={{stageSelected,addOrder,order,sendEmail,finishOrder,loading}}>

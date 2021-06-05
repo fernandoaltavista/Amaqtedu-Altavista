@@ -12,13 +12,15 @@ import {PopUp} from '../popUp/popUp'
 import {useContext,useState} from 'react'
 import firebase from 'firebase/app'
 import formFields from '../../service/formFields.json'
+import waiting from '../../assets/images/png/waiting.png'
 
 
 export const FormCheckOut = () => {
 
 const {cart,totalPriceCart} = useContext(CartContext)
 const {stageSelected,addOrder,sendEmail,loading} = useContext(OrderContext)
-const [error, setError] = useState(false)
+const [error, setError] = useState(true)
+const [chekForm, setCheckForm] = useState(true)
 const [stockEmpty, setStockEmpty] = useState(true)
 const [form, setForm] = useState(
     {
@@ -43,6 +45,8 @@ const newCart = cart.map(({item,quantity}) => {
     return items
 })
 
+const disabledButton = () => [name, phone, mail].includes( undefined ||'') 
+
 const validation = (mail,name,phone) => {
     
     const mailRegex =  /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
@@ -56,22 +60,19 @@ const validation = (mail,name,phone) => {
     }
 }
 
-const disabledButton = () => [name, phone, mail].includes( undefined ||'') || !error
-
 const handleInput = (e) =>{
     e.preventDefault()
+    const value = e.target.value.trim()
     validation(mail,name,phone)
-    const value= e.target.value.trim()
     setForm({
         ...form,
         [e.target.name]: value
     })
-    
 }
 const handleBlur = (e) =>{
     e.preventDefault()
+    const value = e.target.value.trim()
     validation(mail,name,phone)
-    const value= e.target.value.trim()
     setForm({
         ...form,
         [e.target.name]: value
@@ -123,12 +124,14 @@ const generateOrder = () =>{
 }
 
 const handleOrder= (e) =>{
-    
     if (error) {
-        generateOrder()
+        setCheckForm(false)
     }
 }
 
+const generateOrderSubmit = () =>{
+        generateOrder()
+}
 
     return (
         <Fragment>
@@ -139,7 +142,9 @@ const handleOrder= (e) =>{
                     <div className="container">
                     <div className="row">
                     <div className="col-md-8">
-                        <form className="formCheckOut" > 
+
+                {chekForm ?
+                        <form className="formCheckOut" onSubmit={handleOrder}> 
                             {formFields.map(({id,name,placeholder,pattern,title,value,type,label,size}) => 
                             <div key={id}>
                                 <Input label={label}
@@ -157,12 +162,24 @@ const handleOrder= (e) =>{
                             
                             <Link to="/cart"><button className="buttonBack"
                                 >Volver</button></Link>
-
-                            <Link to={(error && stockEmpty) ? "/completed" : "/form"}>
-                                <input className="buttonSubmit" disabled={disabledButton()}
-                                type='submit' value="Finalizar Compra" onClick={(e)=>handleOrder(e)}></input></Link>
+                            <input className="buttonSubmit" disabled={disabledButton()}
+                                type='submit' value="Listo!" ></input>
                             
                         </form>
+                        : error ?
+                        <div className="finishOrder">
+                            <h3 className="textFinishOrder">Ya casi!</h3>
+                            <img src={waiting} alt="waiting" className="imageWaiting"></img>
+                            <Link to="/completed">
+                                    <input className="buttonFinish"
+                                    type='submit' onClick={generateOrderSubmit} 
+                                    value="Finalizar Compra"></input></Link>
+                        </div>
+                        :
+                        <Message text={`Ocurrio un error en el formulario`} type={'error'} />
+                }
+
+            
                     </div>
                     <div className="col-md-4 cartItems">
                         <p className="totalCart">Total Compra: €{totalPriceCart()}</p>

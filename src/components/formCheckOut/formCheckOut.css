@@ -5,7 +5,6 @@ text-align: center;
 }
 .formCheckOut{
 padding: 8px;
-
 }
 
 .cartItems{
@@ -51,6 +50,39 @@ transition: .5s;
     cursor: not-allowed;
     background-color: grey;
     border-color: grey;
+}
+.textFinishOrder{
+    margin: 20px;
+}
+.buttonFinish{
+padding: 20px;
+margin:40px;
+width: 200px;
+font-size: 1rem;
+font-weight: bold;
+border-radius: 10px;
+background-color: #c0591e;
+border: solid 1px;
+border-color: #c0591e;
+color: white;
+cursor: pointer;
+transition: .5s;
+}
+.buttonFinish:hover{
+    background-color: #ac4b13;
+    border-color: #c0591e;
+    transition: .5s;
+}
+
+.finishOrder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.imageWaiting{
+    height: 200px;
+    width: 200px;
 }
 @media screen and (max-width: 776px) {
     .formCheckOut{

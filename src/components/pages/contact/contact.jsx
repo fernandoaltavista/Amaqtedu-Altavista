@@ -46,12 +46,11 @@ const disabledButton = () => [name, phone, mail,text].includes( undefined ||'') 
 const handleInput = (e) =>{ 
     e.preventDefault()
     validationForm(mail)
-    const value= e.target.value.trim()
+    const value= e.target.value
     setForm({
         ...form,
         [e.target.name]: value
     }) 
-    
 }
 const handleBlur = (e) =>{
     e.preventDefault()

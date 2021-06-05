@@ -4,7 +4,7 @@ export const Input = ({label,name,type,placeholder,pattern,title,size,onInput,on
     return (
                 <div className="containerInput">
                     <label className="formLabel">{label}</label>
-                    <input  className={error ? "formInput":"inputError"}
+                    <input  className="formInput"
                                 type={type}
                                 name={name}
                                 title={title}

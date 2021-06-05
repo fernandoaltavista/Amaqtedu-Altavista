@@ -9,7 +9,7 @@ padding:8px;
 .formLabel{
 margin: 5px;
 }
-.formInput,.inputError{
+.formInput{
 border-left: none;
 border-right: none;
 border-top: none;
@@ -21,17 +21,6 @@ background: rgba(128, 128, 128, 0.048);
 }
 
 
-.inputError:focus-visible{
-outline: none;
-border-left: none;
-border-right: none;
-border-top: none;
-height: 2.3rem;
-font-size: 1rem;
-padding: 8px;
-background: rgba(128, 128, 128, 0.048);
-border-bottom: 1px solid red;
-}
 
 .formInput:focus-visible{
 outline: none;
