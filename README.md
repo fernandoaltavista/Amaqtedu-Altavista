@@ -30,6 +30,7 @@ Your app is ready to be deployed!
 ## Made with 🛠️
 
 * React 
+* Styled with CSS
 * EmailJs
 
 ## Autor ✒️
