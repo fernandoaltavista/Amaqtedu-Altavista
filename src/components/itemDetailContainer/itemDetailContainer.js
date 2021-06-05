@@ -10,7 +10,7 @@ export const ItemDetailContainer = () => {
 
 const {id} = useParams()
 const [item, setItem] = useState(null)
-const [isLoading, setIsLoading] = useState(false)
+const [isLoading, setIsLoading] = useState(true)
 
 useEffect(() => {
     setIsLoading(true)

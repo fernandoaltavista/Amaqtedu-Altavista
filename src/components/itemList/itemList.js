@@ -11,7 +11,7 @@ export const ItemList = () => {
 
 const {categoryId} = useParams()
 const [items, setItems] = useState([])
-const [isLoading, setIsLoading] = useState(false)
+const [isLoading, setIsLoading] = useState(true)
 
     const getCategoryId = (data)=>{
     let itemsfind = data.filter(item => item.categoryId === categoryId)
