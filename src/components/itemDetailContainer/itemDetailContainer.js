@@ -1,10 +1,10 @@
 import './itemDetailContainer.css'
-import {useState,useEffect } from 'react'
 import { ItemDetail } from '../itemDetail/itemDetail';
-import { useParams } from 'react-router';
 import { Loader } from '../loader/loader';
+import { useParams } from 'react-router';
 import {getFirestore} from '../../firebase/index'
 import {Message} from '../message/message'
+import {useState,useEffect } from 'react'
 
 export const ItemDetailContainer = () => {
 

@@ -44,14 +44,14 @@ const [isLoading, setIsLoading] = useState(false)
                     : <Fragment>
                         <h4 className="textCategory">{categoryId.toUpperCase()}</h4>
                         <div className="listItems">
-                        <div className="container ">
-                        <div className="row ">
-                        {
-                            items.map(item => 
-                                <Item key={item.title} item={item} />)
-                        } 
-                        </div>
-                        </div>
+                            <div className="container ">
+                                <div className="row ">
+                                {
+                                    items.map(item => 
+                                        <Item key={item.title} item={item} />)
+                                } 
+                                </div>
+                            </div>
                         </div>
                     </Fragment>
             }   

@@ -1,7 +1,7 @@
+import './message.css'
+import {Link} from 'react-router-dom'
 import problemImage from '../../assets/images/png/problems.png'
 import succesImage from '../../assets/images/png/succes.png'
-import {Link} from 'react-router-dom'
-import './message.css'
 
 export const Message = (props) =>{
     return(

@@ -11,7 +11,7 @@ export const CartStage = ({stageActive}) => {
     return(
         <div className="stages">
             {
-                stages.map(({idStage,text,route}) => 
+                stages.map(({idStage,text}) => 
 
                     <div key={idStage} className="stageItem" >
                         {

@@ -43,8 +43,9 @@ useEffect(() => {
                         <img className="imageItemDetail"src={item.pictureUrl} alt={item.title}></img>
                     </div>
                     <div className="col-md-5 textItemDetail">  
-                        <h1 className="titleItemDetail">{item.title}</h1>
+                        <h1 className="titleItemDetail">{item.title.toUpperCase()}</h1>
                         <h1 className="priceItemDetail">€{item.price}</h1>
+                        <p className="descriptionText"> Descripcion</p>
                         <p className="descriptionItemDetail">{item.description}</p>
                         <p className="stockItemDetail">Stock: {item.stock}</p>
                         <div className="buttonAddContainer">

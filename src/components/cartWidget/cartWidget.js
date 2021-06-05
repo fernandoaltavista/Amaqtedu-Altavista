@@ -1,6 +1,6 @@
 import './cartWidget.css'
-import {useContext} from 'react'
 import {CartContext} from '../../context/cartContext'
+import {useContext} from 'react'
 import cartImage from '../../assets/images/svg/cartImage.png'
 
 export const CartWidget = () => {

@@ -96,9 +96,7 @@ const updateStock = () =>{
             setStockEmpty(false)
         }
     })
-    batch.commit().then(r => {
-        console.log('Finalizo Actualizacion')
-        })
+    batch.commit().then(r => {})
 }
 
 const generateOrder = () =>{
