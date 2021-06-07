@@ -18,7 +18,7 @@ const [emptyStockAndRest, setEmptyStockAndRest] = useState([false,0])
         
     const addItem = ({item},qty) => {
         const {id,stock} = item
-        const newCart= cart.slice()
+        const newCart= [...cart]
         setEmptyStockAndRest([false,0])
 
         if (isInCart(id)) {
