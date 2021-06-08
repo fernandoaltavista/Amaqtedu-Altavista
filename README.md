@@ -30,6 +30,7 @@ Your app is ready to be deployed!
 ## Made with 🛠️
 
 * React 
+* Firebase
 * Styled with CSS
 * EmailJs
 
