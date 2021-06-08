@@ -2,6 +2,8 @@
 
 This project is part of the ReactJS Course at CoderHouse
 
+![](public/Proyecto Final- ReactJs- Altavista Fernando.gif)
+
 ## Scripts 🧰
 
 In the project directory, you can run:
