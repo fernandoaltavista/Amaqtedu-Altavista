@@ -2,7 +2,7 @@
 
 This project is part of the ReactJS Course at CoderHouse
 
-![](public/Proyecto Final- ReactJs- Altavista Fernando.gif)
+![](https://github.com/fernandoaltavista/Amaqtedu-Altavista/blob/master/public/gifPage.gif)
 
 ## Scripts 🧰
 
