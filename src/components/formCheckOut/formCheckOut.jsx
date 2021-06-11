@@ -157,11 +157,13 @@ const generateOrderSubmit = () =>{
                                     onInput={(e)=>handleInput(e)}
                                     onBlur={(e)=>handleBlur(e)}/> 
                             </div>)}
+                            <div className="buttonsGroupForm">
+                                <input className="buttonSubmit" disabled={disabledButton()}
+                                    type='submit' value="Listo!" ></input>
+                                <Link to="/cart"><button className="buttonBack"
+                                    >Volver</button></Link>
+                            </div>
                             
-                            <Link to="/cart"><button className="buttonBack"
-                                >Volver</button></Link>
-                            <input className="buttonSubmit" disabled={disabledButton()}
-                                type='submit' value="Listo!" ></input>
                             
                         </form>
                         : error ?

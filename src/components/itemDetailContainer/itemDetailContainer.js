@@ -34,7 +34,7 @@ useEffect(() => {
 }, [id])
 
     return (
-            <div className="conteinerDetail">
+            <div className="containerDetail">
                 { isLoading ? (<Loader text="Cargando producto..." /> ) 
                 : 
                 item ?  <ItemDetail item={item} /> 
