@@ -1,12 +1,17 @@
 
 .navbar{
     font-family: 'Staatliches', cursive;
+    position:fixed;
+    width:100%;
+    background: rgb(255, 255, 255);
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items: center;
-    box-shadow: -2px 15px 105px -10px rgba(0, 0, 0, 0.329);
+    z-index: 1;
+    top: 0;
+    box-shadow: 1px 9px 23px 0px rgba(0,0,0,0.53);
 }
 .logo{
     float: left;
@@ -49,13 +54,10 @@
 	align-content: stretch;
 }
 @media screen and (max-width: 776px) {
-    .navbar{
-        position:relative;
-    }
     .sidebar {
         display: flex;
         width: 100%;
-        height: 280px;
+        height: 250px;
         position: absolute;
         top: 70px;
         left: -100%;
@@ -69,7 +71,6 @@
         left: 0;
         opacity: 1;
         transition: all .2s ease;
-        z-index: 1;
         align-items: center;
         align-content: center;
         box-shadow: -2px 15px 105px -10px rgba(0, 0, 0, 0.329);
@@ -96,11 +97,11 @@
         cursor: pointer;
     }
     .icon-close{
-        background-image: url(../../assets/images/svg/icon-menu.png);
+        background-image: url(../../assets/images/svg/cancelar.png);
         background-repeat: no-repeat;
         background-size: cover;
-        height: 24px;
-        width: 24px;
+        height: 20px;
+        width: 20px;
         border: none;
         margin-left: 15px;
         display: block;

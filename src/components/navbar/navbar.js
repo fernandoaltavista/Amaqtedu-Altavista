@@ -1,7 +1,7 @@
 import './navbar.css'
 import {CartWidget} from '../cartWidget/cartWidget'
 import {NavLink} from 'react-router-dom'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import category from '../../service/category.json'
 import logo from'../../assets/images/svg/logo_peq.png'
 
@@ -10,6 +10,7 @@ export const Navbar = () => {
 
     const handleClick = () => setClick(!click);
     const closeClick = ()=> setClick(false)
+
 
 return (
     <header>
