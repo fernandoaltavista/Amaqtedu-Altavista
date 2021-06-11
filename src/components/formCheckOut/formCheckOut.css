@@ -15,9 +15,17 @@ padding: 8px;
 .cartItems::-webkit-scrollbar {
     display: none;
 }
+.buttonsGroupForm{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+}
 .buttonBack{
 padding: 10px;
-margin:40px 40px 0px 0px;
+margin:20px;
 width: 150px;
 font-size: 1rem;
 border-radius: 10px;
@@ -34,7 +42,7 @@ cursor: pointer;
 }
 .buttonSubmit{
 padding: 10px;
-margin:40px;
+margin:20px;
 width: 200px;
 font-size: 1rem;
 font-weight: bold;

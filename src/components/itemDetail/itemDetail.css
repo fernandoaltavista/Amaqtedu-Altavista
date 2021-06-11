@@ -1,11 +1,8 @@
-.itemDetail{
-    padding-bottom: 30vh;
-}
 .itemDetail >.container{
     background-color: rgb(255, 255, 255); 
-    margin-top: 50px;
     padding:20px;
     margin-bottom: 20px;
+    margin-top: 90px;
     border: 0.2px solid rgba(128, 128, 128, 0.377);
     border-radius: 10px;
     box-shadow: -6px 2px 33px 0px rgba(0,0,0,0.54);
@@ -28,28 +25,25 @@
 .titleItemDetail{
     text-align: left;
     font-size: 2.5rem;
+    font-weight: bold;
     padding-top: 30px;
     padding-bottom: 10px;
-    margin-left: 30px;
     
 }
 .descriptionText{
-    margin-left: 30px;
     font-weight: bold;
     font-size: 1.2rem;
 }
 .descriptionItemDetail{
     text-align: left;
-    margin-left: 30px;
 }
 .stockItemDetail{
     text-align: left;
-    margin-left: 30px;
     font-weight: bold;
 }
 .priceItemDetail{
     font-size: 3.5rem;
-    margin-left: 30px;
+    font-weight: bold;
     padding-bottom: 10px;
     text-align: left;
 }
@@ -59,7 +53,6 @@
 }
 .buttonAddContainer{
     text-align: center;
-    margin-top: 40px;
     
 }
 .buttonFinish{
@@ -71,4 +64,10 @@
     color: white;
     font-weight: bold;
 
+}
+@media screen and (max-width: 776px){
+    .imageItemDetail{
+        width: 200px;
+        height: 200px;
+    }
 }

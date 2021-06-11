@@ -6,6 +6,7 @@
 	align-items: center;
 	align-content: flex-start;
     padding: 10px;
+    margin-top: 90px;
 }
 .stage{
     background-image:url(../../assets/images/png/cheque.png);
@@ -38,6 +39,7 @@
 }
 
 .stageTextSelected{
+    text-align: center;
     font-size: 1rem;
     padding:10px;
     margin-top: 1rem;
@@ -45,6 +47,7 @@
     text-decoration: none;
 }
 .stageText{
+    text-align: center;
     font-size: 1rem;
     margin-top: 1rem;
     padding:10px;

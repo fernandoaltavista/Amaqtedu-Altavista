@@ -1,9 +1,6 @@
-.orderContainer{
-    height: 100vh;
-}
-
 .order{
     border: 1px solid black;
+    margin: 5px;
 }
 .titleOrder{
     font-family: 'Staatliches', cursive;
