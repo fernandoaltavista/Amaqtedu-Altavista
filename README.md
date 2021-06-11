@@ -36,6 +36,9 @@ Your app is ready to be deployed!
 * Styled with CSS
 * EmailJs
 
+## Deployment 👷‍♂️
+Click [here](https://amaqtedu-faa62.web.app/) to check deployment
+
 ## Autor ✒️
 
 * [Fernando Altavista](https://www.linkedin.com/in/fernando-andres-altavista-614453201)
