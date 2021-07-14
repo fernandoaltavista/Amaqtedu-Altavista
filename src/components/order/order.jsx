@@ -32,7 +32,7 @@ useEffect(() => {
                 order ?
                 <Fragment> 
                     <CartStage stageActive={stageSelected(routeNow)}/>
-                    <div className="container orderContainer">
+                    <div className="container">
                     <div className="row">
                         <div className="col-md-6 order"> 
                             <h2 className="titleOrder">Tu orden</h2>
