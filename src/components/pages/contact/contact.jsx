@@ -1,4 +1,4 @@
-import './contact.css'
+import './contact.scss'
 import {Input} from '../../input/input'
 import {Message} from '../../message/message'
 import {useState} from 'react'

@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/size.scss';
 
 .gretting{
     font-family: 'Staatliches', cursive;
@@ -15,22 +17,17 @@
     font-style: italic;
 }
 .home{
-    height:70vh;
-    width: 100%;
+    @include size(70vh,100%);
     background-image: url(../../../assets/images/png/banner.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    @include sizeImage(cover,center,no-repeat);
 }
 .logoBanner{
-    height: 250px;
-    width: 500px;
-    background-size: cover;
-    background-position: center;
+    @include size(250px,500px);
+    @include sizeImage(cover,center,no-repeat);
 }
 .categoryItems{
     display: flex;
@@ -48,15 +45,13 @@
     align-items: center;
 }
 .imageCategory{
-    height: 320px;
-    width: 350px;
-    background-size: cover;
-    background-position: center;
+    @include size(320px,350px);
+    @include sizeImage(cover,center,no-repeat);
     border-radius: 20px;
 }
 .textCategoryHome{
     text-decoration: none;
-    color: black;
+    color: $font-color-primary;
     text-align: center;
     font-weight: bold;
     margin-top: 20px;
@@ -66,16 +61,14 @@
     text-decoration: none;
 }
 .textCategoryHome:hover{
-    color: orange;
+    color: $font-color-secondary;
 }
 @media screen and (max-width: 776px) {
     .logoBanner{
-        height: 180px;
-        width: 300px;
+        @include size(180px,300px);
     }
     .imageCategory{
-        height: 300px;
-        width: 280px;
+        @include size(300px,280px);
     }
     .textBanner{
         padding-left: 20px;

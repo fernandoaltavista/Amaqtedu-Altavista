@@ -1,4 +1,4 @@
-import './navbar.css'
+import './navbar.scss'
 import {CartWidget} from '../cartWidget/cartWidget'
 import {NavLink} from 'react-router-dom'
 import {useState} from 'react'

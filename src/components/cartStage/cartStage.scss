@@ -1,3 +1,7 @@
+@import '../../styles/variables.scss';
+@import '../../styles/size.scss';
+
+
 .stages{
     display: flex;
 	flex-direction: row;
@@ -9,22 +13,18 @@
 }
 .stage{
     background-image:url(../../assets/images/png/cheque.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width:30px;
-    height: 30px;
+    @include sizeImage(cover,center,no-repeat);
+    @include size(30px,30px);
     display: block;
     border: none;
 }
 .selectedStage{
     background-image: url(../../assets/images/png/cheque.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width:30px;
-    height: 30px;
+    @include sizeImage(cover,center,no-repeat);
+    @include size(30px,30px);
     display: block;
     border-radius:100%;
-    background-color: orange;
+    background-color: $bg-primary;
 
 }
 .stageItem{
@@ -41,7 +41,7 @@
     font-size: 1rem;
     padding:10px;
     margin-top: 1rem;
-    border-bottom:1px orange solid;
+    border-bottom:1px $bg-primary solid;
     text-decoration: none;
 }
 .stageText{
@@ -49,9 +49,9 @@
     margin-top: 1rem;
     padding:10px;
     text-decoration: none;
-    color: black;
+    color: $font-color-primary;
 }
 .stages a:hover{
-    color: black;
+    color: $font-color-primary;
     text-decoration: none;
 }

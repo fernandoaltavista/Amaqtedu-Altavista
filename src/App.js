@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css'
-import './App.css'
+import './styles/App.scss'
 import { ItemDetailContainer } from './components/itemDetailContainer/itemDetailContainer'
 import {BrowserRouter,Switch,Route} from 'react-router-dom'
 import {Cart} from './components/cart/cart'

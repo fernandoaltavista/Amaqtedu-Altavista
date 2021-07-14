@@ -10,4 +10,5 @@
     margin: 10px;
     border-radius: 10px;
     background: rgba(168, 163, 163, 0.199);
+    min-height: 80vh;
 }

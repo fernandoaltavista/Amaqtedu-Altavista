@@ -1,3 +1,6 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/size.scss';
+
 .contact{
     margin-top: 30px;
 }
@@ -18,28 +21,22 @@
 }
 .iconFacebook{
     background-image: url(../../../assets/images/png/facebook.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 50px;
-    width: 50px;
+    @include sizeImage(cover,center,no-repeat);
+    @include size(50px,50px);
     margin: 30px;
     display: block;
 }
 .iconTwitter{
     background-image: url(../../../assets/images/png/square.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 50px;
-    width: 50px;
+    @include sizeImage(cover,center,no-repeat);
+    @include size(50px,50px);
     margin: 30px;
     display: block;
 }
 .iconLinkedin{
     background-image: url(../../../assets/images/png/linkedin.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 50px;
-    width: 50px;
+    @include sizeImage(cover,center,no-repeat);
+    @include size(50px,50px);
     margin: 30px;
     display: block;
 }
@@ -54,8 +51,7 @@
     margin-top: 10px;
 }
 textarea{
-    height: 300px;
-    width: 300px;
+    @include size(300px,300px);
 }
 @media screen and (max-width: 776px) {
     .contact{

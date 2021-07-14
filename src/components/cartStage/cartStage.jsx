@@ -1,4 +1,4 @@
-import './cartStage.css'
+import './cartStage.scss'
 import { useLocation } from 'react-router-dom'
 import stages from '../../service/stages.json'
 

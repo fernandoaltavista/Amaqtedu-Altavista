@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+@import '../../styles/size.scss';
 
 .navbar{
     font-family: 'Staatliches', cursive;
@@ -30,14 +32,14 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    color: black;
+    color: $font-color-primary;
 }
 .itemNav:hover{
-    color: orange;
+    color: $font-color-secondary;
     text-decoration: none;
 }
 .selectedLink{
-    color: orange;
+    color: $font-color-secondary;
     border-bottom: solid 1px;
 }
 .loginContainer{
@@ -53,9 +55,8 @@
         position:relative;
     }
     .sidebar {
+        @include size(280px,100%);
         display: flex;
-        width: 100%;
-        height: 280px;
         position: absolute;
         top: 70px;
         left: -100%;
@@ -86,10 +87,8 @@
     }
     .icon-toggler{
         background-image: url(../../assets/images/svg/icon-menu.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 24px;
-        width: 24px;
+        @include sizeImage(cover,center,no-repeat);
+        @include size(24px,24px);
         border: none;
         margin-left: 15px;
         display: block;
@@ -97,10 +96,8 @@
     }
     .icon-close{
         background-image: url(../../assets/images/svg/icon-menu.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 24px;
-        width: 24px;
+        @include sizeImage(cover,center,no-repeat);
+        @include size(24px,24px);
         border: none;
         margin-left: 15px;
         display: block;

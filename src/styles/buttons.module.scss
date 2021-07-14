@@ -1,0 +1,37 @@
+@import './variables.scss';
+
+.primary{
+    padding: 10px;
+    width: 200px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: $bg-primary;
+    border: solid 1px;
+    border-color: $bg-primary;
+    color: $font-color-third;
+    margin: 20px;
+}
+
+.primary:hover{
+    transition: .5s;
+    color: #ffffff;
+    border-color: #996111;
+    background-color: #996111;
+}
+
+.remove{
+    margin-right: 10px;
+    padding: 5px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: solid 1px;
+    border-color: rgba(160, 15, 15, 0.884);
+    color: rgba(160, 15, 15, 0.884);
+}
+.remove:hover{
+    transition: .5s;
+    color: #ffffff;
+    background-color: rgba(160, 15, 15, 0.884);
+}

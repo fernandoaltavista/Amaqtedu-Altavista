@@ -7,7 +7,7 @@ import { Link ,useLocation} from 'react-router-dom'
 import {CartItem} from '../cartItem/cartItem'
 import {PopUp} from '../popUp/popUp'
 import {useContext} from 'react'
-
+import buttons from '../../styles/buttons.module.scss'
 
 export const Cart = () => {
     
@@ -30,7 +30,7 @@ const routeNow = location.pathname
             <Fragment>
                 <CartStage stageActive={stageSelected(routeNow)}/>
                 <div className="buttonRemoveAllContainer">
-                    <button className="buttonRemoveAll" 
+                    <button className={buttons.remove} 
                         onClick={()=>clear()}>Borrar Todo</button>  
                 </div>
                 
@@ -41,14 +41,14 @@ const routeNow = location.pathname
                 )}
                 
                 <p className="totalCart">Total Compra: €{totalPriceCart()}</p>
-                <Link to="/form"><button className="buttonConfirm" onClick={()=>clearEmptyStock()}
+                <Link to="/form"><button className={buttons.primary} onClick={()=>clearEmptyStock()}
                 >Confirmar Compra</button></Link> 
             </Fragment>
 
                 :
                 <div className="cartEmptyContainer">
                     <p>📭 El carrito se encuentra vacio</p>
-                    <Link to='/'><button className="buttonHome">Volver al home</button>
+                    <Link to='/'><button className={buttons.primary}>Volver al home</button>
                     </Link>
                 </div>
                 
